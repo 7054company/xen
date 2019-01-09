@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html class="no-js">
+---
+layout: compress
+---
 
-<head>
+<!DOCTYPE html>
+<html data-current="{{ page.section }}" lang="en">
 
   {% include head.html %}
 
-</head>
+  <body>
 
-<body>
+    {% include header.html %}
 
-  {% include header.html %}
+    <main>
 
-  {{ content }}
+      {{ content }}
 
-  {% include footer.html %}
+    </main>
 
-</body>
+    {% include footer.html %}
+
+  </body>
 
 </html>

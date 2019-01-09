@@ -1,64 +1,86 @@
-# About
+# 7054company
 
-This Jekyll Demo site is meant to showcase how a typical site can be created with Jekyll. It features a mix of developer friendly aspects such as galleries built from the file system, along with Client friendly features using Netlify CMS for basic editing that a client can login and update content via a web UI.
+*Note: Check out my [Eleventy Netlify Boilerplate](https://github.com/danurbanowicz/eleventy-netlify-boilerplate) if you want to get with the cool kids; it does the same as this project but uses the [Eleventy](https://www.11ty.io/) static site generator, is super flexible and doesn't require Ruby.*
 
-**Live Demo** [https://jekyll-netlifycms.netlify.com/](https://jekyll-netlifycms.netlify.com/)
+**A really simple Jekyll template for creating a fast, static website on Netlify with
+a continuous deployment workflow.**
 
-# Features at a Glance
+🔥 **This project is featured on Netlify's official [template showcase](http://templates.netlify.com/template/jekyll-with-netlify-cms-boilerplate/) and blog: [The top 10 Static Site Generators to watch in 2018](http://templates.netlify.com/template/jekyll-with-netlify-cms-boilerplate/)** 🔥
 
-- **[Gulp.js](https://gulpjs.com/)** build allows for SASS/SCSS and JS/Babel processing.
-- **live reloading** local development with Browser Sync
-- Homepage markup freedom that lets developers go wild!
-- Use partials/includes for re-useable content such as headers, footer and calls to action (\_include/call-to-action.html) that is easy to maintain.
-- Dynamic page [content from .CSV files](https://jekyll-netlifycms.netlify.com/directory/) that is easy for clients to manage using Excel.
-- Image gallery built from images in the file system. Developers simply add an image to a folder and the gallery is updated.
-- **[Netlify CMS integration](https://www.netlifycms.org/)** allows editing page content as well as creating News.
-- Contact form uses [Netlify Forms](https://www.netlify.com/docs/form-handling/) to receive submissions which can be [piped to other services](https://www.netlify.com/docs/form-handling/#receiving-submissions)
-- Uses [Jekyll](https://jekyllrb.com/docs/datafiles/) `\_data` to output content like variables across multiple pages, making content easy to maintain.
+* Minimal styling, ready to make your own
+* Example blog posts, pages and contact form
+* Responsive CSS Grid layout with fallbacks for older browsers
+* Continuous Deployment workflow via Netlify and Github
+* Netlify CMS for managing content
+* Netlify Identity for authenticating users
+* Netlify Forms for processing your static HTML forms with reCAPTCHA
+* Optional Netlify `_redirects` and `_headers` files ready to use
+* Jekyll SASS pipeline
+* Minified HTML and CSS
 
-# Getting started
+Based on Netlify's [Jekyll + Netlify CMS](https://github.com/netlify-templates/jekyll-netlify-cms) starter template, head over there for more details on deployment and build settings or to get help with setting up Netlify.
 
-This project requires first that [Jekyll be installed](https://jekyllrb.com/docs/installation/) along with the [Node.js](https://nodejs.org/en/download/). If its your first time run `gem install jekyll bundler` to install both Jekyll and Bundler locally.
+For help with templates, local development and other Jekyll related stuff, check out the excellent [Jekyll Docs](https://jekyllrb.com/docs/home/).
 
-After cloning the project
+## [View Demo](https://jekyll-netlify-boilerplate.netlify.com/)
 
-- run `bundle install` to install gem dependencies
-- run `npm install` to install npm modules
-- run `gulp` to start live development
+## Performance
 
-  <!-- Markdown snippet -->
+You can test the demo site's TTFB (Time To First Byte) at [testmysite.io](https://testmysite.io/5b50abe51f12b74b81dd5442/jekyll-netlify-boilerplate.netlify.com)
 
-  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/NickStees/jekyll-cms)
+## Getting started
 
-## SCSS and JS
+Simply click the deploy button to get your own copy of the repository deployed to Netlify:
 
-The theme and JS files are located in the `/assets/_scss` and `/assets/js` folder. Gulp will process these files and build the sites final CSS and JS files.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/jekyll-netlify-boilerplate&stack=cms)
 
-## Netlify CMS Integration
+This will setup everything needed for running the CMS:
 
-The Netlify CMS edits the YAML files in `_data/*` along with the `_posts` folder for the sites News. By allowing the Netlify CMS to edit mainly the `_data` files, you are free to use complex markup on the rest of the site pages (more than markdown provides), and to pull in Netlify CMS managed content you simply tell Jekyll to output {{ site.data.home.title }} which coresponds to the `_data/home.yml` to access the Netlify CMS managed YAMl data.
+* A new repository in your GitHub account with the code
+* Full Continuous Deployment to Netlify's global CDN network
+* Control users and access with Netlify Identity
+* Manage content with Netlify CMS
 
-Each _.html page will need a corresponding _.yml file that the Netlify CMS will edit. So you can control exactly what the client can edit.
+### Setup authentication
 
-You can have Netlify CMS save content as Markdown, and have Jekyll process it into html using the markdownify [Liquid filter](https://jekyllrb.com/docs/liquid/filters/) ex. {{ site.data.home.intro-body | markdownify }}
+After deploying this project, Netlify Identity will add you as a CMS user and
+will email you an invite. It is not necessary to accept this invite if you wish
+to use an
+[OAuth provider](https://www.netlify.com/docs/identity/#external-provider-login)
+(e.g. Github) to manage authentication for your CMS.
+It is recommended to use this method of authentication as it removes the need
+for an email & password to log in to the CMS and is generally more secure. You
+will need to add an OAuth provider in your Netlify app settings under
+"Settings" > "Identity" > "External providers".
 
-This demo site also uses some 'Global' yaml files `_data/business.yml` and `_data/social_media.yml` that can be edited which are like site wide settings that multiple pages use such as a business address or phone number. So only one Global file needs updated, and the rest of the site is updated.
+Next, navigate to `/admin` on your site, choose your OAuth provider from the
+login box and you should then be logged into your CMS.
 
-News can be created by the Netlify CMS similar [to a blog example](https://hackernoon.com/adding-a-cms-to-your-static-site-with-netlify-cms-4adadf49aac2), which creates markdown files in the `\_posts` directory.
+Now you're all set, and you can start editing content!
 
-## Directories Explained
+**Note:** if you switch the repo that was created to private, you'll need to regenerate your token,
+as the token generated using the deploy to Netlify button can only access public repositories. To
+regenerate your token, head to "Settings" in your Netlify site dashboard, go to the "Identity"
+section, then scroll to "Services" where you'll see an "Edit settings" button. Click that and you'll
+see a text link to "Generate access token in GitHub".
 
-This is a quick overview of this projects directories, and how they are used.
+## Local Development
 
-- **\_data** Jekyll [Data Files](https://jekyllrb.com/docs/datafiles/) which is also what Netlify CMS will mainly edit to update site pages.
-- **\_includes** [Reuseable components/partials](https://jekyllrb.com/docs/includes/) that are used across multiple pages
-- **\_layouts** Default [Jekyll layouts](https://jekyllrb.com/docs/step-by-step/04-layouts/)
-- **\_posts** Defautl Jekyll [Posts/News](https://jekyllrb.com/docs/posts/) articles configued to be edited by Netlify CMS
-- **admin** [Netlify CMS configuration](https://www.netlifycms.org/docs/add-to-your-site/)
-- **api** An example of making a static JSON file an API endpoint
-- **assets** SCSS/JS files mainly related to the Theme, processed by Gulp.js
-- **docs** A folder of [static files](https://jekyllrb.com/docs/static-files/) used to build dynamic pages (Documents) based on the files in these folders, easy for a Developer to maintain.
-- **img** Static images as well as the Gallery Page is dynamically created from the contents of the `img/gallery` folder
-- **uploads** The location Netlify CMS editor [uploads files](https://www.netlifycms.org/docs/configuration-options/#media-library).
-- **\_\_\_.html** The site pages are mainly created from these .html files which pull data from the `_data` directory that can be maintained from the Netlify CMS
-# xen
+Clone this repository and run:
+
+```bash
+bundle install
+bundle exec jekyll server --watch
+```
+Jekyll will watch your project folder for changes.
+
+Now navigate to [localhost:4000](http://localhost:4000/) to preview the site, and
+[localhost:4000/admin](http://localhost:4000/admin) to log into the CMS.
+
+## Bug reports, feature requests, etc
+
+This is an ongoing project and I welcome any feedback, suggestions or contributions.
+
+Please use the issue tracker to let me know about any bugs or feature requests, or alternatively make a pull request.
+
+If you need any help with setting up Netlify CMS, you can reach out to the Netlify team in the [Netlify CMS Gitter](https://gitter.im/netlify/netlifycms).

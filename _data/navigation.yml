@@ -1,0 +1,10 @@
+# specify main nav items here
+
+- text: 7ea
+  url: /
+- text: About
+  url: /about
+- text: Contact
+  url: /contact
+- text: Blog
+  url: /blog
