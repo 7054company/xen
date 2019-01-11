@@ -3,10 +3,11 @@ subtitle: Static speed, with dynamic content
 intro-title:   Experts on 7ea Developers, teams, and businesses of all sizes use 7ea to deploy, manage, and scale apps.
 intro-subtitle:   Experts on 7ea Developers, teams!!
 intro-body: >-
-  Static sites are fast to get up and running and develop on. They are also **performance
-  beasts** but their biggest downside is non technical users editing content. Adding the
-  Netlify CMS to your Jekyll site means clients can update this site via a Web UI. It is
-  no wordpress or Drupal replacement, but gets the job done.
+A powerful and innovative feature set
+
+Built for developers, by developers.
+
+Heroku Runtime
 intro-img: /uploads/8649856355_627bcdeadf_h.jpg
 feature-title: This is Editable!
 feature-subtitle: Even a complex layout like this is editable with the Netlify CMS, you won't be having client adjust the layout like [Gutenberg](https://wordpress.org/plugins/gutenberg/), but they can still keep things up to date!
