@@ -6,10 +6,18 @@ intro-body: >-
 A powerful and innovative feature set
 Built for developers, by developers.
 intro-img: /uploads/8649856355_627bcdeadf_h.jpg
-feature-title: This is Editable!
-feature-subtitle: Even a complex layout like this is editable with the Netlify CMS, you won't be having client adjust the layout like [Gutenberg](https://wordpress.org/plugins/gutenberg/), but they can still keep things up to date!
+feature-title:  7ea
+feature-subtitle: Focus on your apps
+
+Invest in apps, not ops. Heroku handles the hard stuff — patching and upgrading, 24/7 ops and security, build systems, failovers, and more — so your developers can stay focused on building great apps.
+Turn your company into an apps company
+
+Today every company needs apps to engage their customers and run their businesses. Step up your ability to build, manage, and deploy great apps at scale with 7ea.
+ [Gutenberg](https://wordpress.org/plugins/gutenberg/), but they can still keep things up to date!
 testimonial-title: We are the Best
-testimonial-subtitle: Even these complex icon graphics below can be updated
+testimonial-subtitle: Powerful platform, unparalleled ecosystem
+
+Don’t reinvent the wheel. Heroku’s 150+ third-party add-ons, 1000+ open source buildpacks, and 3000+ ready-to-deploy Heroku Buttons provides a rich ecosystem of pre-integrated extensions and services.
 hotels: '15'
 resturants: '25'
 museums: '100'
