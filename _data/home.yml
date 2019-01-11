@@ -4,10 +4,7 @@ intro-title:   Experts on 7ea Developers, teams, and businesses of all sizes use
 intro-subtitle:   Experts on 7ea Developers, teams!!
 intro-body: >-
 A powerful and innovative feature set
-
 Built for developers, by developers.
-
-Heroku Runtime
 intro-img: /uploads/8649856355_627bcdeadf_h.jpg
 feature-title: This is Editable!
 feature-subtitle: Even a complex layout like this is editable with the Netlify CMS, you won't be having client adjust the layout like [Gutenberg](https://wordpress.org/plugins/gutenberg/), but they can still keep things up to date!
@@ -17,5 +14,5 @@ hotels: '15'
 resturants: '25'
 museums: '100'
 minutes: '12'
-services-title: Service Offered
-services-subtitle: There is a service.yml that Netlify CMS can edit to change the below
+services-title: A powerful and innovative feature set
+services-subtitle: Built for developers, by developers.
