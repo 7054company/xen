@@ -1,601 +1,768 @@
-<html lang="en" class=" js flexbox flexboxlegacy hashchange history rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent">
+
+ <!--Main_dash---!>
+<html lang="en" data-form-id="">
  <head> 
-  <title>Logging | Heroku Dev Center</title> 
-  <link rel="shortcut icon" type="image/x-icon" href="https://www.herokucdn.com/favicon.ico"> 
-  <link rel="alternate" type="application/atom+xml" title="Heroku Recent Articles" href="http://feeds.feedburner.com/herokudevcenterarticles"> 
-  <link rel="alternate" type="application/atom+xml" title="Heroku Changelog" href="http://feeds.feedburner.com/herokuchangelog"> 
-  <link rel="search" type="application/opensearchdescription+xml" title="Heroku Dev Center" href="/opensearch.xml"> 
-  <link rel="canonical" href="https://devcenter.heroku.com/articles/logging"> 
   <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"> 
-  <meta name="csrf-param" content="authenticity_token"> 
-  <meta name="csrf-token" content="mWIjReIWgIDKeqTG+B9YYO9FuzQRf5hw0fbYLpKi37agEH7iBZ2bdj3ZvPcDKFsMscZEoVZ93qA2CClCbU1X8Q=="> 
-  <meta name="description" content="Logs are a stream of time-stamped events aggregated from the output streams of all your app’s running processes. Retrieve, filter, or use syslog drains."> 
-  <meta name="twitter:card" content="summary"> 
-  <meta name="twitter:site" content="@herokudevcenter"> 
-  <meta name="twitter:title" content="Logging | Heroku Dev Center"> 
-  <meta name="twitter:description" content="Logs are a stream of time-stamped events aggregated from the output streams of all your app’s running processes. Retrieve, filter, or use syslog drains."> 
-  <meta name="twitter:image" content="https://www.herokucdn.com/images/og.png"> 
-  <meta property="og:image:secure_url" content="https://www.herokucdn.com/images/og.png"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="alternate" href="7ea" hreflang="7ea"> 
+  <title>A head from infinity | 7ea</title> 
+  <meta property="og:title" content="head from infinity | 7ea"> 
+  <meta name="description" content="7ea is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud."> 
+  <meta property="og:description" content="7ea is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud."> 
+  <meta property="og:image" content="https://www.herokucdn.com/images/og.png"> 
   <meta property="og:image:width" content="1200"> 
   <meta property="og:image:height" content="630"> 
   <meta name="google-site-verification" content="V8eEvIkb6RQqJca9Wf-o9baurAQMe54VKxd06IeaFeg"> 
   <meta name="slack-app-id" content="A1QME020P"> 
-  <link rel="stylesheet" media="screen, print" href="//devcenter-assets1.herokucdn.com/assets/public-8d388220f2a4ef326e3accecca9e7ea4126357e2e1502c79f72b46f2c09f5093.css"> 
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.herokucdn.com/favicon.ico"> 
+  <link rel="stylesheet" media="all" href="https://www2.assets.heroku.com/assets/application-5514867163526d2b6fc1eb7316f96d27cfbb4304dc4df1d064289ea24a6337bd.css"> 
+  <link rel="canonical" href="https://www.heroku.com/"> 
+  <meta name="csrf-param" content="authenticity_token"> 
+  <meta name="csrf-token" content="Ld1EFcZs3IRUT6SK8ZEK5fFscObbqiC66ZfRTzb88iE8ynP8PjcvsYvHmY1Aep2RQ9iZg4rDp3bDo2sl66jc9g=="> 
+  <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
  </head> 
- <body>
-  <div class="page-wrapper">
-   <header aria-label="Global Dev Center site header" role="banner">
-    <div id="primary-header">
-     <nav aria-label="Global Dev Center site navigation" id="navigation-devcenter">
-      <span aria-hidden="true" class="mobile-nav-devcenter">Show nav<span></span><span></span><span></span><span></span></span>
-      <div>
-       <div id="logo-devcenter">
-        <a class="heroku-brand" href="/"><span class="logo-text">Heroku Dev Center</span></a>
-       </div>
-       <div class="mobile-nav-wrapper">
-        <ul class="main-nav">
-         <li class="getting-started"><a href="/start">Get Started</a></li>
-         <li class="reference"><a href="/categories/reference">Documentation</a></li>
-         <li class="changelog"><a href="/changelog">Changelog</a></li>
-        </ul>
-       </div>
-       <div class="nav-wrapper">
-        <ul class="main-nav">
-         <li class="getting-started has-dropdown"><a href="/start">Get Started</a>
-          <ul class="dropdown dropdown-sm">
-           <li><a aria-label="Get started with Node.js" href="/articles/getting-started-with-nodejs">Node.js</a></li>
-           <li><a aria-label="Get started with Rails 5" href="/articles/getting-started-with-rails5">Ruby on Rails</a></li>
-           <li><a aria-label="Get started with Ruby" href="/articles/getting-started-with-ruby">Ruby</a></li>
-           <li><a aria-label="Get started with Python" href="/articles/getting-started-with-python">Python</a></li>
-           <li><a aria-label="Get started with Java" href="/articles/getting-started-with-java">Java</a></li>
-           <li><a aria-label="Get started with PHP" href="/articles/getting-started-with-php">PHP</a></li>
-           <li><a aria-label="Get started with Go" href="/articles/getting-started-with-go">Go</a></li>
-           <li><a aria-label="Get started with Scala" href="/articles/getting-started-with-scala">Scala</a></li>
-           <li><a aria-label="Get started with Clojure" href="/articles/getting-started-with-clojure">Clojure</a></li>
-          </ul></li>
-         <li class="reference"><a href="/categories/reference">Documentation</a></li>
-         <li class="changelog"><a href="/changelog">Changelog</a></li>
-         <li class="has-dropdown"><a class="nav-more">More</a>
-          <div class="dropdown more">
-           <section aria-label="Additional Heroku web resources" class="more-resources">
-            <span class="more-title">Additional Resources</span>
-            <ul>
-             <li><a href="https://www.heroku.com/home">Home</a></li>
-             <li><a href="https://elements.heroku.com/">Elements</a></li>
-             <li><a href="https://www.heroku.com/products">Products</a></li>
-             <li><a href="https://www.heroku.com/pricing">Pricing</a></li>
-             <li><a href="https://www.heroku.com/careers">Careers</a></li>
-             <li><a href="https://help.heroku.com/">Help</a></li>
-             <li><a href="https://status.heroku.com/">Status</a></li>
-             <li><a href="https://www.heroku.com/events">Events</a></li>
-             <li><a href="https://www.heroku.com/podcasts">Podcasts</a></li>
-             <li><a href="https://www.heroku.com/compliance">Compliance Center</a></li>
-            </ul>
-           </section>
-           <section aria-label="Heroku Blog posts" class="more-blog" id="more-blog">
-            <span class="more-title">Heroku Blog</span>
-            <h3><a class="js-blog-link" href="https://blog.heroku.com/2018-heroku-retrospective">Heroku in 2018: Advancing Developer Experience, Trust &amp; Compliance, and Data</a></h3>
-            <p class="js-blog-date">6 days ago by Vikram Rana</p>
-            <p class="js-blog-content"></p>
-            <p>2018 was an amazing year for Heroku and our customers. We want to extend a big thank you for your feedback, beta participation, and spirit of innovation, which inspires us every day to... <a href="https://blog.heroku.com/2018-heroku-retrospective">Read More</a></p>
-            <p></p>
-            <a class="button btn-default btn-sm btn-inline" href="https://blog.heroku.com">Visit Blog</a>
-           </section>
-          </div></li>
-        </ul>
-        <ul class="tool-nav">
-         <li class="search">
-          <div id="search-field-desktop">
-           <form class="search-form" name="devcentersearch" action="/search" accept-charset="UTF-8" method="get">
-            <input name="utf8" type="hidden" value="✓">
-            <div class="search-input-group">
-             <input placeholder="Search Dev Center" aria-label="Search terms" class="form-control" type="text" spellcheck="false" autocomplete="off" name="q" title="search" id="search-input" tabindex="1">
-             <button type="submit" value="Submit search" aria-label="Submit search" tabindex="2"></button>
-            </div>
-           </form>
-          </div></li>
-         <li class="user"><a href="/login?origin=%2Farticles%2Flogging">Log in</a><span>or</span><a class="sign-up highlight" data-trackable="{&quot;category&quot;:&quot;Sign Up Links&quot;,&quot;action&quot;:&quot;Clicked&quot;,&quot;label&quot;:null}" href="https://signup.heroku.com">Sign up</a></li>
-        </ul>
-       </div>
-      </div>
-     </nav>
-    </div>
-   </header>
-   <div class="container">
-    <div class="search-nav-wrap col-md-4 sidebar nocontent"> 
-     <div class="left-nav"> 
-      <div class="toggle-left-nav" data-hide-message="Hide categories">
-       View categories
+ <body class="home-page js-home-index"> 
+  <!-- Begin GA Object Creation w/ Optimize Plugin --> 
+  <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-39697570-1', 'auto', 'heroku_optimize');
+        ga('heroku_optimize.require', 'GTM-NNN6K2G');
+    </script> 
+  <!-- End GA Object w/ Optimize Plugin --> 
+  <!-- Google Tag Manager --> 
+  <noscript>
+   &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-JD26" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-JD26');</script> 
+  <!-- End Google Tag Manager --> 
+  <div class="page"> 
+   <div id="heroku-cookie-banner"></div> 
+   <header id="header"> 
+    <nav id="navigation" role="navigation"> 
+     <span class="mobile-nav" aria-hidden="true"> Show nav <span></span> <span></span> <span></span> <span></span> </span> 
+     <div class="wrapper-full"> 
+      <div id="logo"> 
+       <a href="https://www.heroku.com/home">Heroku</a> 
       </div> 
-      <div class="left-nav-content" style="display: none;"> 
-       <h1>Categories</h1> 
-       <ul class=""> 
-        <li class="top-level "> <span class="expander"></span> <a class="category" href="/categories/heroku-architecture"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-spaces-48"></use> 
-          </svg> Heroku Architecture </a> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/dynos"> Dynos (app containers) </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/stacks"> Stacks (operating system images) </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/networking-dns"> Networking &amp; DNS </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/platform-policies"> Platform Policies </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/platform-principles"> Platform Principles </a></li>
-         </ul> </li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <a class="category" href="/categories/command-line"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-cli-48"></use> 
-          </svg> Command Line </a></li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <span class="expander"></span> <a class="category" href="/categories/deployment"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-deploy-48"></use> 
-          </svg> Deployment </a> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/deploying-with-git"> Deploying with Git </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/deploying-with-docker"> Deploying with Docker </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/deployment-integrations"> Deployment Integrations </a></li>
-         </ul> </li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <span class="expander"></span> <a class="category" href="/categories/continuous-delivery"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-pipelines-48"></use> 
-          </svg> Continuous Delivery </a> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/continuous-integration"> Continuous Integration </a></li>
-         </ul> </li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <span class="expander"></span> <a class="category" href="/categories/language-support"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-code-48"></use> 
-          </svg> Language Support </a> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/nodejs-support"> Node.js </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <span class="expander"></span> <a class="" href="/categories/ruby-support"> Ruby </a> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/rails-support"> Rails Support </a></li>
+      <div class="nav-wrapper"> 
+       <ul class="main-nav"> 
+        <li class="has-dropdown"> <a href="https://www.heroku.com/products">Products</a> 
+         <ul class="dropdown"> 
+          <li class="has-dropdown"><a class="bookends-icon platform" href="https://www.heroku.com/platform">Heroku Platform</a> 
+           <ul class="dropdown"> 
+            <li class="has-dropdown"><a class="bookends-icon dx" href="https://www.heroku.com/dx">Heroku DX</a> 
+             <ul class="dropdown wide"> 
+              <li><a class="bookends-icon flow" href="https://www.heroku.com/flow">Heroku Flow</a></li> 
+              <li><a class="bookends-icon cd" href="https://www.heroku.com/continuous-delivery">Continuous Delivery</a></li> 
+              <li><a class="bookends-icon ci" href="https://www.heroku.com/continuous-integration">Continuous Integration</a></li> 
+             </ul> </li> 
+            <li><a class="bookends-icon opex" href="https://www.heroku.com/platform/opex">Heroku OpEx</a></li> 
+            <li class="has-dropdown"><a class="bookends-icon runtime" href="https://www.heroku.com/platform/runtime">Heroku Runtime</a> 
+             <ul class="dropdown"> 
+              <li><a class="bookends-icon dyno" href="https://www.heroku.com/dynos">Heroku Dynos</a></li> 
+             </ul> </li> 
+           </ul> </li> 
+          <li><a class="bookends-icon postgres" href="https://www.heroku.com/postgres">Heroku Postgres</a></li> 
+          <li><a class="bookends-icon redis" href="https://www.heroku.com/redis">Heroku Redis</a></li> 
+          <li><a class="bookends-icon kafka" href="https://www.heroku.com/kafka">Kafka on Heroku</a></li> 
+          <li class="has-dropdown"> <a class="bookends-icon enterprise" href="https://www.heroku.com/enterprise">Heroku Enterprise</a> 
+           <ul class="dropdown wide"> 
+            <li><a class="bookends-icon spaces" href="https://www.heroku.com/private-spaces">Heroku Private Spaces</a></li> 
+            <li><a class="bookends-icon connect" href="https://www.heroku.com/connect">Heroku Connect</a></li> 
+            <li><a class="bookends-icon shield" href="https://www.heroku.com/shield">Heroku Shield</a></li> 
+           </ul> </li> 
+          <li><a class="bookends-icon teams" href="https://www.heroku.com/teams">Heroku Teams</a></li> 
+         </ul> </li> 
+        <li class="has-dropdown"> <a href="https://elements.heroku.com">Marketplace</a> 
+         <ul class="dropdown"> 
+          <li><a class="bookends-icon addons" href="https://elements.heroku.com/addons">Add-ons</a></li> 
+          <li><a class="bookends-icon buttons" href="https://elements.heroku.com/buttons">Buttons</a></li> 
+          <li><a class="bookends-icon buildpacks" href="https://elements.heroku.com/buildpacks">Buildpacks</a></li> 
+          <li><a class="bookends-icon elements" href="https://www.heroku.com/elements">About</a></li> 
+         </ul> </li> 
+        <li><a id="pricing-head" href="https://www.heroku.com/pricing">Pricing</a></li> 
+        <li><a id="doc-head" href="https://devcenter.heroku.com">Documentation</a></li> 
+        <li><a href="https://www.heroku.com/support">Support</a></li> 
+        <li class="has-dropdown"> <a class="nav-more" href="#">More</a> 
+         <div class="dropdown more"> 
+          <section class="more-resources"> 
+           <span class="more-title">Resources</span> 
+           <ul> 
+            <li><a href="https://www.heroku.com/what">What is Heroku?</a></li> 
+            <li><a href="https://www.heroku.com/help">Help</a></li> 
+            <li><a href="https://www.heroku.com/customers">Customers</a></li> 
+            <li><a href="https://www.heroku.com/careers">Careers</a></li> 
+            <li><a href="https://www.heroku.com/events">Events</a></li> 
+            <li><a href="https://www.heroku.com/podcasts">Podcasts</a></li> 
+            <li><a href="https://www.heroku.com/compliance">Compliance Center</a></li> 
            </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/working-with-bundler"> Working with Bundler </a></li>
-           </ul> </li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <span class="expander"></span> <a class="" href="/categories/python-support"> Python </a> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/background-jobs-in-python"> Background Jobs in Python </a></li>
+          </section> 
+          <section class="more-heroku-is"> 
+           <span class="more-title">Heroku is for</span> 
+           <ul> 
+            <li><a href="https://www.heroku.com/developers">Developers</a></li> 
+            <li><a href="https://www.heroku.com/ctos">CTOs</a></li> 
+            <li><a href="https://www.heroku.com/team-collaboration">Team Collaboration</a></li> 
+            <li><a href="https://www.heroku.com/startups">Startups</a></li> 
+            <li><a href="https://www.heroku.com/enterprises">Enterprises</a></li> 
+            <li><a href="https://www.heroku.com/agencies">Agencies</a></li> 
+            <li><a href="https://www.heroku.com/students">Students</a></li> 
+            <li><a href="https://www.heroku.com/solutions">See More</a></li> 
            </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/working-with-django"> Working with Django </a></li>
-           </ul> </li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <span class="expander"></span> <a class="" href="/categories/java-support"> Java </a> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/working-with-maven"> Working with Maven </a></li>
+          </section> 
+          <section class="more-languages"> 
+           <span class="more-title">Languages</span> 
+           <ul> 
+            <li><a href="https://www.heroku.com/nodejs">Node</a></li> 
+            <li><a href="https://www.heroku.com/ruby">Ruby</a></li> 
+            <li><a href="https://www.heroku.com/java">Java</a></li> 
+            <li><a href="https://www.heroku.com/php">PHP</a></li> 
+            <li><a href="https://www.heroku.com/python">Python</a></li> 
+            <li><a href="https://www.heroku.com/go">Go</a></li> 
+            <li><a href="https://www.heroku.com/scala">Scala</a></li> 
+            <li><a href="https://www.heroku.com/clojure">Clojure</a></li> 
+            <li><a href="https://www.heroku.com/languages">See More</a></li> 
            </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/java-database-operations"> Java Database Operations </a></li>
-           </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/working-with-the-play-framework"> Working with the Play Framework </a></li>
-           </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/java-advanced-topics"> Java Advanced Topics </a></li>
-           </ul> </li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/php-support"> PHP </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <span class="expander"></span> <a class="" href="/categories/go-support"> Go </a> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/managing-go-dependencies"> Go Dependency Management </a></li>
-           </ul> </li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/scala-support"> Scala </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/clojure-support"> Clojure </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/kotlin-support"> Kotlin </a></li>
-         </ul> </li>
+          </section> 
+          <section id="more-blog" class="more-blog"> 
+           <span class="more-title">Latest News from the Heroku Blog</span> 
+           <h3><a class="js-blog-link" href="https://blog.heroku.com/2018-heroku-retrospective">Heroku in 2018: Advancing Developer Experience, Trust &amp; Compliance, and Data</a></h3> 
+           <p class="js-blog-date">4 days ago by Vikram Rana</p> 
+           <p class="js-blog-content"></p>
+           <p>2018 was an amazing year for Heroku and our customers. We want to extend a big thank you for your feedback, beta participation, and spirit of innovation, which inspires us every day to... <a href="https://blog.heroku.com/2018-heroku-retrospective">Read More</a></p>
+           <p></p> 
+           <a class="button btn btn-default btn-sm btn-inline" href="https://blog.heroku.com/news">More news</a> 
+           <a class="button btn-inline" href="https://blog.heroku.com">View all blog posts</a> 
+          </section> 
+         </div> </li> 
        </ul> 
-       <ul class=""> 
-        <li class="top-level "> <span class="expander"></span> <a class="category" href="/categories/data-management"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-data-48"></use> 
-          </svg> Databases &amp; Data Management </a> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <span class="expander"></span> <a class="" href="/categories/heroku-postgres"> Heroku Postgres </a> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/postgres-basics"> Postgres Basics </a></li>
-           </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/postgres-performance"> Postgres Performance </a></li>
-           </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/postgres-data-transfer-preservation"> Postgres Data Transfer &amp; Preservation </a></li>
-           </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/postgres-availability"> Postgres Availability </a></li>
-           </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/postgres-special-topics"> Postgres Special Topics </a></li>
-           </ul> </li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/heroku-redis"> Heroku Redis </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/kafka"> Apache Kafka on Heroku </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/other-data-stores"> Other Data Stores </a></li>
-         </ul> </li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level active"> <span class="expander expanded"></span> <a class="category" href="/categories/monitoring-metrics"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-metrics-48"></use> 
-          </svg> Monitoring &amp; Metrics </a> 
-         <ul class="indent"> 
-          <li class=" active"> <a class="active" href="/categories/logging"> Logging </a></li>
-         </ul> </li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <a class="category" href="/categories/app-performance"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-control-2-48"></use> 
-          </svg> App Performance </a></li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <span class="expander"></span> <a class="category" href="/categories/add-ons"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-addon-48"></use> 
-          </svg> Add-ons </a> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/add-on-documentation"> All Add-ons </a></li>
-         </ul> </li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <a class="category" href="/categories/collaboration"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-team-48"></use> 
-          </svg> Collaboration </a></li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <span class="expander"></span> <a class="category" href="/categories/security"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-lock-48"></use> 
-          </svg> Security </a> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/app-security"> App Security </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/identities-authentication"> Identities &amp; Authentication </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/compliance"> Compliance </a></li>
-         </ul> </li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <span class="expander"></span> <a class="category" href="/categories/heroku-enterprise"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-enterprise-48"></use> 
-          </svg> Heroku Enterprise </a> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <span class="expander"></span> <a class="" href="/categories/private-spaces"> Private Spaces </a> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/private-space-infrastucture-networking"> Infrastructure Networking </a></li>
-           </ul> </li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/enterprise-teams"> Enterprise Teams </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/heroku-connect"> Heroku Connect (Salesforce sync) </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/sso"> Single Sign-on (SSO) </a></li>
-         </ul> </li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <span class="expander"></span> <a class="category" href="/categories/extending-heroku"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-api-48"></use> 
-          </svg> Extending Heroku </a> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/platform-api"> Platform API </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/app-webhooks"> App Webhooks </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/labs"> Heroku Labs </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <span class="expander"></span> <a class="" href="/categories/building-add-ons"> Building Add-ons </a> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/add-on-development-tasks"> Add-on Development Tasks </a></li>
-           </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/add-on-apis"> Add-on APIs </a></li>
-           </ul> 
-           <ul class="indent nav-hidden"> 
-            <li class=" "> <a class="" href="/categories/add-on-guidelines-requirements"> Add-on Guidelines &amp; Requirements </a></li>
-           </ul> </li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/building-cli-plugins"> Building CLI Plugins </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/buildpacks"> Developing Buildpacks </a></li>
-         </ul> 
-         <ul class="indent nav-hidden"> 
-          <li class=" "> <a class="" href="/categories/devcenter"> Dev Center </a></li>
-         </ul> </li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <a class="category" href="/categories/billing"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-user-48"></use> 
-          </svg> Accounts &amp; Billing </a></li>
-       </ul> 
-       <ul class=""> 
-        <li class="top-level "> <a class="category" href="/categories/troubleshooting"> 
-          <svg class="category-icon"> 
-           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-support-48"></use> 
-          </svg> Troubleshooting &amp; Support </a></li>
+       <ul class="tool-nav"> 
+        <li> 
+         <form action="/search" class="site-search" id="site-search" method="get"> 
+          <div class="search-input gsc-input"> 
+           <input type="text" spellcheck="false" autocomplete="off" name="q" title="search"> 
+           <button type="submit" value="Submit search" class="search-submit"> </button>
+          </div> 
+         </form> </li> 
+        <li class="user"> <a href="https://id.heroku.com">Log in</a> <span>or</span> <a class="sign-up highlight" data-trackable="{&quot;category&quot;:&quot;Sign Up Links&quot;,&quot;action&quot;:&quot;Clicked&quot;,&quot;label&quot;:&quot;www-header&quot;}" href="https://signup.heroku.com">Sign up</a> </li> 
        </ul> 
       </div> 
      </div> 
-    </div> 
-    <div class="col-md-8 content">
-     <article class="js-autolink ">
-      <ul class="bread-crumb">
-       <li><a href="/categories/monitoring-metrics">Monitoring &amp; Metrics</a></li>
-       <span class="bread-crumb-divider"> › </span>
-       <li><a href="/categories/logging">Logging</a></li>
-       <span class="bread-crumb-divider"> › </span>
-       <li class="bread-crumb-current">Logging</li>
-      </ul>
-      <h1 data-category="logging">Logging</h1>
-      <p class="last-updated"><span class="icon-clock"></span>Last updated 11 January 2019</p>
-      <div id="table-of-contents">
-       <h2><span class="icon-list"></span>Table of Contents</h2>
-       <ul>
-        <li><a href="#types-of-logs">Types of logs</a></li>
-        <li><a href="#log-history-limits">Log history limits</a></li>
-        <li><a href="#writing-to-your-log">Writing to your log</a></li>
-        <li><a href="#log-retrieval">Log retrieval</a></li>
-       </ul>
+    </nav> 
+    <section id="hero" class="center"> 
+     <div class="unslider">
+      <div id="hero-slider" class="slideshow unslider-horizontal" aria-live="polite" style="position: relative; overflow: hidden; height: initial;"> 
+       <ul class="unslider-wrap unslider-carousel" style="width: 500%; left: -200%;"> 
+        <li aria-hidden="true" class="" style="width: 20%;"> 
+         <div class="wrapper wrapper-lg"> 
+          <div class="hero-img"> 
+           <img class="" alt="Heroku Postgres" height="420px" width="600px" data-hires="https://www3.assets.heroku.com/assets/home/hero/postgres_2x-2351364d015a052a9bc3e8aa6fdab41906f7f9e2124f344f5426bdb90d110169.png" src="https://www3.assets.heroku.com/assets/home/hero/postgres_2x-2351364d015a052a9bc3e8aa6fdab41906f7f9e2124f344f5426bdb90d110169.png"> 
+          </div> 
+          <div class="content"> 
+           <h6 class="caps text-dark">New</h6> 
+           <h2>Heroku Postgres PGX: New&nbsp;Plans, More&nbsp;Possibilities</h2> 
+           <p>We’re excited to announce our new lineup of Postgres production plans. PGX Plans introduce larger database sizes, more generous resource allocations, and a broader set of options to suit your needs and to help your applications scale more smoothly.</p> 
+           <div class="cta"> 
+            <a class="btn btn-primary btn-lg btn-uppercase" data-trackable="{&quot;category&quot;:&quot;Sign Up Links&quot;,&quot;action&quot;:&quot;Clicked&quot;,&quot;label&quot;:&quot;www-home-top&quot;}" href="https://signup.heroku.com">Sign up for free</a> 
+            <p><a href="/postgres">Explore Heroku Postgres</a></p> 
+            <p><a href="https://blog.heroku.com/heroku-pgx-plans">Read our Announcement</a></p> 
+           </div> 
+          </div> 
+         </div> </li> 
+        <li data-show-after="500" aria-hidden="true" style="width: 20%; display: list-item;" class=""> 
+         <div class="wrapper wrapper-lg"> 
+          <div class="hero-img"> 
+           <img class="" alt="Unleash your inner startup" height="420px" width="600px" data-hires="https://www0.assets.heroku.com/assets/home/hero/startup_2x-7d19c0222639db59ac497178719016583e1c886ac83eff67670d2c7584513620.png" src="https://www0.assets.heroku.com/assets/home/hero/startup_2x-7d19c0222639db59ac497178719016583e1c886ac83eff67670d2c7584513620.png"> 
+          </div> 
+          <div class="content"> 
+           <h6 class="caps text-dark">Move Fast</h6> 
+           <h2>Unleash your inner startup</h2> 
+           <p>Choose Heroku for the same reasons disruptive startups do: it’s the best platform for building with modern architectures, innovating quickly, and scaling precisely to meet demand.</p> 
+           <div class="cta"> 
+            <a class="btn btn-primary btn-lg btn-uppercase" data-trackable="{&quot;category&quot;:&quot;Sign Up Links&quot;,&quot;action&quot;:&quot;Clicked&quot;,&quot;label&quot;:&quot;www-home-top&quot;}" href="https://signup.heroku.com">Sign up for free</a> 
+            <p><a href="/customers">Explore Heroku Customers</a></p> 
+           </div> 
+          </div> 
+         </div> </li> 
+        <li data-show-after="500" aria-hidden="false" style="width: 20%; display: list-item;" class="unslider-active"> 
+         <div class="wrapper wrapper-lg"> 
+          <div class="hero-img"> 
+           <img class="" alt="Focus on your apps" height="420px" width="600px" data-hires="https://www0.assets.heroku.com/assets/home/hero/focus_2x-315bdf6fd4e19d85ceaf800528afb680190b79056a23516428b4cb4ff61d37c2.png" src="https://www0.assets.heroku.com/assets/home/hero/focus_2x-315bdf6fd4e19d85ceaf800528afb680190b79056a23516428b4cb4ff61d37c2.png"> 
+          </div> 
+          <div class="content"> 
+           <h6 class="caps text-dark">Developers</h6> 
+           <h2>Focus on your apps</h2> 
+           <p>Invest in apps, not ops. Heroku handles the hard stuff — patching and upgrading, 24/7 ops and security, build systems, failovers, and more — so your developers can stay focused on building great apps.</p> 
+           <div class="cta"> 
+            <a class="btn btn-primary btn-lg btn-uppercase" data-trackable="{&quot;category&quot;:&quot;Sign Up Links&quot;,&quot;action&quot;:&quot;Clicked&quot;,&quot;label&quot;:&quot;www-home-top&quot;}" href="https://signup.heroku.com">Sign up for free</a> 
+            <p><a href="/platform">Explore the Heroku Platform</a></p> 
+           </div> 
+          </div> 
+         </div> </li> 
+        <li data-show-after="500" aria-hidden="true" style="width: 20%; display: list-item;"> 
+         <div class="wrapper wrapper-lg"> 
+          <div class="hero-img"> 
+           <img class="" alt="Run your apps on the platform that caters to every need" height="420px" width="600px" data-hires="https://www3.assets.heroku.com/assets/home/hero/apps_2x-1cbc7cbe49e12ad3cfb038f1b21942c2c4773ed159e422c1c10e5d2257fbdd80.png" src="https://www3.assets.heroku.com/assets/home/hero/apps_2x-1cbc7cbe49e12ad3cfb038f1b21942c2c4773ed159e422c1c10e5d2257fbdd80.png"> 
+          </div> 
+          <div class="content"> 
+           <h6 class="caps text-dark">Enterprise</h6> 
+           <h2>Turn your company into an apps company</h2> 
+           <p>Today every company needs apps to engage their customers and run their businesses. Step up your ability to build, manage, and deploy great apps at scale with Heroku.</p> 
+           <div class="cta"> 
+            <a class="btn btn-primary btn-lg btn-uppercase" data-trackable="{&quot;category&quot;:&quot;Sign Up Links&quot;,&quot;action&quot;:&quot;Clicked&quot;,&quot;label&quot;:&quot;www-home-top&quot;}" href="https://signup.heroku.com">Sign up for free</a> 
+            <p><a href="/enterprise">Explore Heroku Enterprise</a></p> 
+           </div> 
+          </div> 
+         </div> </li> 
+        <li data-show-after="500" aria-hidden="true" style="width: 20%; display: list-item;"> 
+         <div class="wrapper wrapper-lg"> 
+          <div class="hero-img"> 
+           <img class="" alt="Powerful platform, unparalleled ecosystem" height="420px" width="600px" data-hires="https://www2.assets.heroku.com/assets/home/hero/ecosystem_2x-51bfd00540ebf0b1e52b4fd935222d5c46c7ad58fc05273ca96311788ac0777c.png" src="https://www2.assets.heroku.com/assets/home/hero/ecosystem_2x-51bfd00540ebf0b1e52b4fd935222d5c46c7ad58fc05273ca96311788ac0777c.png"> 
+          </div> 
+          <div class="content"> 
+           <h6 class="caps text-dark">Elements</h6> 
+           <h2>Powerful platform, unparalleled ecosystem</h2> 
+           <p>Don’t reinvent the wheel. Heroku’s 150+ third-party add-ons, 1000+ open source buildpacks, and 3000+ ready-to-deploy Heroku Buttons provides a rich ecosystem of pre-integrated extensions and services.</p> 
+           <div class="cta"> 
+            <a class="btn btn-primary btn-lg btn-uppercase" data-trackable="{&quot;category&quot;:&quot;Sign Up Links&quot;,&quot;action&quot;:&quot;Clicked&quot;,&quot;label&quot;:&quot;www-home-top&quot;}" href="https://signup.heroku.com">Sign up for free</a> 
+            <p><a href="/elements">Explore Heroku Elements</a></p> 
+           </div> 
+          </div> 
+         </div> </li> 
+       </ul> 
+      </div>
+      <nav class="unslider-nav">
+       <ol aria-controls="initial">
+        <li data-slide="0" class="">1</li>
+        <li data-slide="1" class="">2</li>
+        <li data-slide="2" class="unslider-active">3</li>
+        <li data-slide="3">4</li>
+        <li data-slide="4">5</li>
+       </ol>
+      </nav>
+     </div> 
+    </section> 
+   </header> 
+   <div class="page-content"> 
+    <section class="languages border-top"> 
+     <ul class="lang-list text-center"> 
+      <li><a class="node" title="Node.js" href="/nodejs">Node.js</a></li> 
+      <li><a class="ruby" title="Ruby" href="/ruby">Ruby</a></li> 
+      <li><a class="java" title="Java" href="/java">Java</a></li> 
+      <li><a class="php" title="PHP" href="/php">PHP</a></li> 
+      <li><a class="python" title="Python" href="/python">Python</a></li> 
+      <li><a class="go" title="Go" href="/go">Go</a></li> 
+      <li><a class="scala" title="Scala" href="/scala">Scala</a></li> 
+      <li><a class="clojure" title="Clojure" href="/clojure">Clojure</a></li> 
+     </ul> 
+    </section> 
+    <div class="podcasts-callout"> 
+     <div class="promo-content"> 
+      <div> 
+       <span class="promo-headline">Heroku Podcasts</span> 
+       <span class="promo-copy">A collection of podcasts with Heroku engineers, developers, and product managers.</span> 
       </div> 
-      <p>A Heroku app’s logs are aggregated from the output streams of all of its running processes, system components, and backing services. Heroku’s <a href="https://devcenter.heroku.com/articles/logplex">Logplex</a> routes log streams from all of these diverse sources into a single channel, providing a foundation for comprehensive logging.</p> 
-      <h2 id="types-of-logs"><a href="https://devcenter.heroku.com/articles/logging#types-of-logs">Types of logs</a></h2> 
-      <h3 id="runtime-logs"><a href="https://devcenter.heroku.com/articles/logging#runtime-logs">Runtime logs</a></h3> 
-      <p>Heroku aggregates the following categories of logs for a deployed app:</p> 
+     </div> 
+     <div class="promo-cta"> 
+      <a class="button" href="podcasts">Listen Now</a> 
+     </div> 
+    </div> 
+    <div class="section-purple"> 
+     <div id="heroku-is-icons" data-variation="default"> 
       <ul> 
-       <li> <strong>App logs</strong> - Logging output from the application itself. This includes logs generated by your app’s code and dependencies. (Filter: <code>--source app</code>)</li> 
-       <li> <strong>System logs</strong> - Messages about actions taken by the Heroku platform infrastructure on behalf of your app, such as: restarting a crashed process, sleeping or waking a web dyno, or serving an error page due to a problem in your app. (Filter: <code>--source heroku</code>)</li> 
-       <li> <strong>API logs</strong> - Messages about administrative actions taken by you and other developers working on your app, such as: deploying new code, scaling the process formation, or toggling maintenance mode. (Filter: <code>--source app --dyno api</code>)</li> 
-       <li> <strong>Add-on logs</strong> - Messages from add-on services. See the add-on’s Dev Center article for details. (Filter varies by add-on)</li> 
+       <li> <a data-trackable="{&quot;category&quot;:&quot;Homepage Segmentation&quot;,&quot;action&quot;:&quot;Click&quot;,&quot;label&quot;:&quot;developers&quot;,&quot;variable&quot;:&quot;button-clicks&quot;}" href="/developers"> <img alt="Developers" src="https://www2.assets.heroku.com/assets/heroku-is-for/developers-77a5c8ded289bbc48d1431aff0ec27741c70a62a150eb499af0ecb5f2589c07c.svg"> <span class="tag">Developers</span> </a> </li> 
+       <li> <a data-trackable="{&quot;category&quot;:&quot;Homepage Segmentation&quot;,&quot;action&quot;:&quot;Click&quot;,&quot;label&quot;:&quot;ctos&quot;,&quot;variable&quot;:&quot;button-clicks&quot;}" href="/ctos"> <img alt="CTOs" src="https://www3.assets.heroku.com/assets/heroku-is-for/ctos-56f843cf5987cedd0903f6733a523cb14ce9c84e2ce63ab8e230007ec0dcbb7a.svg"> <span class="tag">CTO<span class="lowercase">s</span></span> </a> </li> 
+       <li> <a data-trackable="{&quot;category&quot;:&quot;Homepage Segmentation&quot;,&quot;action&quot;:&quot;Click&quot;,&quot;label&quot;:&quot;teams&quot;,&quot;variable&quot;:&quot;button-clicks&quot;}" href="/team-collaboration"> <img alt="Teams" src="https://www1.assets.heroku.com/assets/heroku-is-for/teams-9de871b4bc651e092dcce137c37df877d55e7d89ec376d01a217afbb07f6bc7b.svg"> <span class="tag">Teams</span> </a> </li> 
+       <li> <a data-trackable="{&quot;category&quot;:&quot;Homepage Segmentation&quot;,&quot;action&quot;:&quot;Click&quot;,&quot;label&quot;:&quot;startups&quot;,&quot;variable&quot;:&quot;button-clicks&quot;}" href="/startups"> <img alt="Startups" src="https://www2.assets.heroku.com/assets/heroku-is-for/startups-7d676120d9d386c863b28284730b78d175eb6dde78fd517f5cb51c92ab894eb6.svg"> <span class="tag">Startups</span> </a> </li> 
+       <li> <a data-trackable="{&quot;category&quot;:&quot;Homepage Segmentation&quot;,&quot;action&quot;:&quot;Click&quot;,&quot;label&quot;:&quot;enterprises&quot;,&quot;variable&quot;:&quot;button-clicks&quot;}" href="/enterprises"> <img alt="Enterprises" src="https://www2.assets.heroku.com/assets/heroku-is-for/enterprises-27b32a74106fba31a12b198afadd2959025e3d17582c9ceee53cbacb339bd211.svg"> <span class="tag">Enterprises</span> </a> </li> 
+       <li> <a data-trackable="{&quot;category&quot;:&quot;Homepage Segmentation&quot;,&quot;action&quot;:&quot;Click&quot;,&quot;label&quot;:&quot;agencies&quot;,&quot;variable&quot;:&quot;button-clicks&quot;}" href="/agencies"> <img alt="Agencies" src="https://www0.assets.heroku.com/assets/heroku-is-for/agencies-75c5f4abc851ca6422083bda847e3b4249af8ac8451bcadcfdd3e3ab7955174f.svg"> <span class="tag">Agencies</span> </a> </li> 
+       <li> <a data-trackable="{&quot;category&quot;:&quot;Homepage Segmentation&quot;,&quot;action&quot;:&quot;Click&quot;,&quot;label&quot;:&quot;students&quot;,&quot;variable&quot;:&quot;button-clicks&quot;}" href="/students"> <img alt="Students" src="https://www1.assets.heroku.com/assets/heroku-is-for/students-32a0464ee31083acf58c2077af6de5adb042c91e888e57385533f94a2bea058e.svg"> <span class="tag">Students</span> </a> </li> 
       </ul> 
-      <h3 id="build-logs"><a href="https://devcenter.heroku.com/articles/logging#build-logs">Build logs</a></h3> 
-      <p>The logs that are generated while building and deploying your app are separate from the app’s runtime logs. Logs for both successful and unsuccessful builds are available from your app’s Activity tab in the <a href="https://dashboard.heroku.com">Heroku Dashboard</a>:</p> 
-      <p><img src="https://s3.amazonaws.com/heroku-devcenter-files/article-images/355-imported-1547191907-screenshot_2.png" alt="Screenshot of https://dashboard.heroku.com/apps/peaceful-falls-84709/activity"></p> 
-      <p>Click <strong>View build log</strong> for any build event in the Activity Feed to see its logs:</p> 
-      <p><img src="https://s3.amazonaws.com/heroku-devcenter-files/article-images/355-imported-1547191908-screenshot_3.png" alt="Screenshot of https://dashboard.heroku.com/apps/peaceful-falls-84709/activity/builds/b8a13d92-5bd8-4029-81de-ca970c095758"></p> 
-      <h2 id="log-history-limits"><a href="https://devcenter.heroku.com/articles/logging#log-history-limits">Log history limits</a></h2> 
-      <p>Logplex is designed for collating and routing log messages, not for storage. It retains the most recent 1,500 lines of your consolidated logs, which expire after 1 week.</p> 
-      <p>For more production-ready persistence of logs, you can add one of the Heroku platform’s available <a href="https://elements.heroku.com/addons">logging add-ons</a> to your app. Most of these add-ons offer a free plan to get started.</p> 
-      <p>Alternatively, you can implement your own <a href="https://devcenter.heroku.com/articles/log-drains">log drains</a> for full control over what happens to your logs.</p> 
-      <h2 id="writing-to-your-log"><a href="https://devcenter.heroku.com/articles/logging#writing-to-your-log">Writing to your log</a></h2> 
-      <p>Anything your app writes to standard out (<code>stdout</code>) or standard error (<code>stderr</code>) is captured into your logs. This means that you can log from anywhere in your application code with a simple output statement.</p> 
-      <p>In Ruby, you could use something like:</p> 
-      <pre class=" language-ruby"><code class=" language-ruby">puts <span class="token string">"Hello, logs!"</span>
-</code></pre> 
-      <p>In Java:</p> 
-      <pre class=" language-java"><code class=" language-java">System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello, logs!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello, logs!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre> 
-      <p>The same holds true for all other languages supported by Heroku.</p> 
-      <p>To take advantage of real-time logging, you might need to disable any log buffering your application is performing. For example, in Ruby, add this to your <code>config.ru</code> file:</p> 
-      <pre class=" language-ruby"><code class=" language-ruby"><span class="token variable">$stdout</span><span class="token punctuation">.</span>sync <span class="token operator">=</span> <span class="token keyword">true</span>
-</code></pre> 
-      <p>Some frameworks send log output somewhere other than <code>stdout</code> by default. These might require extra configuration. For example, when using the Ruby on Rails TaggedLogger by ActiveSupport, you should add the following into your app’s configuration to get <code>stdout</code> logging:</p> 
-      <pre class=" language-ruby"><code class=" language-ruby">config<span class="token punctuation">.</span>logger <span class="token operator">=</span> <span class="token constant">Logger</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token constant">STDOUT</span><span class="token punctuation">)</span>
-</code></pre> 
-      <h2 id="log-retrieval"><a href="https://devcenter.heroku.com/articles/logging#log-retrieval">Log retrieval</a></h2> 
-      <h3 id="log-format"><a href="https://devcenter.heroku.com/articles/logging#log-format">Log format</a></h3> 
-      <p>The output format of the <code>heroku logs</code> command is as follows:</p> 
-      <pre><code>timestamp source[dyno]: message
-</code></pre> 
+      <div class="wrapper wrapper-sm"> 
+       <h2>Developers, teams, and businesses of all sizes use Heroku to deploy, manage, and scale apps.</h2> 
+       <p>Whether you're building a simple prototype or a business-critical product, Heroku's fully-managed platform gives you the simplest path to delivering apps quickly. <a href="/solutions" class="solutions">Learn more</a> about how Heroku can benefit your app development.</p> 
+      </div> 
+     </div> 
+     <section class="screencast"> 
+      <div class="wrapper"> 
+       <h2 class="text-center">Work with the language you already love</h2> 
+       <div class="screencast-container has-spinner"> 
+        <div class="spinner spinner-centered"> 
+         <i class="spinner__dot spinner__dot--one"></i> 
+         <i class="spinner__dot spinner__dot--two"></i> 
+         <i class="spinner__dot"></i> 
+        </div> 
+        <div class="screencast-languages-list"> 
+         <a href="#" class="js-language-switcher screencast-language active" data-language="node">
+          <svg class="icon ">
+           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-language-node-48"></use>
+          </svg> Node</a> 
+         <a href="#" class="js-language-switcher screencast-language" data-language="ruby">
+          <svg class="icon ">
+           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-language-ruby-48"></use>
+          </svg> Ruby</a> 
+         <a href="#" class="js-language-switcher screencast-language" data-language="java">
+          <svg class="icon ">
+           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-language-java-48"></use>
+          </svg> Java</a> 
+         <a href="#" class="js-language-switcher screencast-language" data-language="php">
+          <svg class="icon ">
+           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-language-php-48"></use>
+          </svg> PHP</a> 
+         <a href="#" class="js-language-switcher screencast-language" data-language="python">
+          <svg class="icon ">
+           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-language-python-48"></use>
+          </svg> Python</a> 
+         <a href="#" class="js-language-switcher screencast-language" data-language="go">
+          <svg class="icon ">
+           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-language-go-48"></use>
+          </svg> Go</a> 
+        </div> 
+        <div class="video-wrapper video-wrapper-dark"> 
+         <div class="fluid-width-video-wrapper playing" style="padding-top: 56.2%;">
+          <iframe id="cli_deploy" class="screencast-video-player" src="https://player.vimeo.com/video/149419963?api=1&amp;byline=0&amp;title=0&amp;portrait=0&amp;frameborder=0&amp;player_id=cli_deploy" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+         </div> 
+         <div class="fluid-width-video-wrapper" style="padding-top: 56.2%;">
+          <iframe id="gh_deploy" class="screencast-video-player" src="https://player.vimeo.com/video/149420474?api=1&amp;byline=0&amp;title=0&amp;portrait=0&amp;frameborder=0&amp;player_id=gh_deploy" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+         </div> 
+         <div class="fluid-width-video-wrapper" style="padding-top: 56.2%;">
+          <iframe id="app_metrics" class="screencast-video-player" src="https://player.vimeo.com/video/149422129?api=1&amp;byline=0&amp;title=0&amp;portrait=0&amp;frameborder=0&amp;player_id=app_metrics" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+         </div> 
+         <div class="fluid-width-video-wrapper" style="padding-top: 56.2%;">
+          <iframe id="add_ons" class="screencast-video-player" src="https://player.vimeo.com/video/149420879?api=1&amp;byline=0&amp;title=0&amp;portrait=0&amp;frameborder=0&amp;player_id=add_ons" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+         </div> 
+         <div class="fluid-width-video-wrapper" style="padding-top: 56.2%;">
+          <iframe id="slide_to_scale" class="screencast-video-player" src="https://player.vimeo.com/video/149422342?api=1&amp;byline=0&amp;title=0&amp;portrait=0&amp;frameborder=0&amp;player_id=slide_to_scale" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+         </div> 
+        </div> 
+        <div> 
+         <ol class="video-chapters js-chapter-switcher"> 
+          <li> <a data-target="cli_deploy" href="#cli_deploy" data-tooltip="Deploy with the CLI"> <span class="video-marker"></span> </a> </li> 
+          <li> <a data-target="gh_deploy" href="#gh_deploy" data-tooltip="Continuous Deployment with GitHub"> <span class="video-marker"></span> </a> </li> 
+          <li> <a data-target="app_metrics" href="#app_metrics" data-tooltip="Application Metrics"> <span class="video-marker"></span> </a> </li> 
+          <li> <a data-target="add_ons" href="#add_ons" data-tooltip="Adding Add-ons"> <span class="video-marker"></span> </a> </li> 
+          <li> <a data-target="slide_to_scale" href="#slide_to_scale" data-tooltip="Slide to scale"> <span class="video-marker"></span> </a> </li> 
+         </ol> 
+         <div class="video-labels text-center"> 
+          <h5 class="caps">Deploy</h5> 
+          <h5 class="caps">Manage</h5> 
+          <h5 class="caps">Scale</h5> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </section> 
+    </div> 
+    <section class="newswatch section-gray-dark"> 
+     <div class="wrapper wrapper-sm text-center"> 
+      <h2>Heroku on NewsWatch TV</h2> 
+      <p>NewsWatch TV recently featured Heroku in a Biz Report that aired across the AMC and ION networks. Learn how Heroku helps companies deliver cutting-edge customer experiences in the cloud.</p> 
+      <div class="video-wrapper video-wrapper-light"> 
+       <div class="videoplayer">
+        <video id="heroku_newswatch" playsinline="true" controlslist="nodownload" poster="https://www1.assets.heroku.com/videos/heroku_newswatch/cover.jpg">
+         <source src="https://www3.assets.heroku.com/videos/heroku_newswatch/heroku_newswatch.webm" type="video/webm">
+         <source src="https://www3.assets.heroku.com/videos/heroku_newswatch/heroku_newswatch.ogg" type="video/ogg">
+         <source src="https://www1.assets.heroku.com/videos/heroku_newswatch/heroku_newswatch.mp4" type="video/mp4">
+         <p>Your browser does not support HTML5 video.</p>
+        </video>
+        <div class="controls">
+         <button name="button" type="submit" class="action action-play" accesskey="P">Play</button>
+         <div class="progress-bar">
+          <span class="progress-bar-current"></span>
+         </div>
+         <div class="progress-time">
+          <span class="progress-time-current">00:00</span>
+          <span class="progress-time-separator"> • </span>
+          <span class="progress-time-total">00:00</span>
+         </div>
+         <button name="button" type="submit" class="action action-mute">Mute</button>
+         <button name="button" type="submit" class="action action-fullscreen">Full Screen</button>
+        </div>
+        <div class="start"></div>
+       </div> 
+      </div> 
+      <a class="btn btn-default btn-info" target="_blank" data-trackable="{&quot;category&quot;:&quot;External Links&quot;,&quot;action&quot;:&quot;Click&quot;,&quot;label&quot;:&quot;2018 NewsWatch Article&quot;}" href="https://newswatchtv.com/2018/06/15/heroku-newswatch-review/">See the full article</a> 
+     </div> 
+    </section> 
+    <section class="features"> 
+     <div class="wrapper"> 
+      <div class="features-standard"> 
+       <div class="text-center space-top"> 
+        <h2>A powerful and innovative feature set</h2> 
+        <h3>Built for developers, by developers.</h3> 
+       </div> 
+       <ul class="feature-set list-unstyled row"> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-dyno-48"></use>
+         </svg> <h4 class="text-dark">Heroku Runtime</h4> <p>Your apps run inside smart containers in a fully managed runtime environment, we handle everything critical for production — configuration, orchestration, load balancing, failovers, logging, security, and more.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-postgres-48"></use>
+         </svg> <h4 class="text-dark">Heroku Postgres (SQL)</h4> <p>Reliable and secure PostgreSQL as a service with easy setup, encryption at rest, simple scaling, database forking, continuous protection, and more.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-redis-48"></use>
+         </svg> <h4 class="text-dark">Heroku Redis</h4> <p>The most popular in-memory, key-value datastore — delivered as a service. Heroku Redis provides powerful data types, great throughput, and built-in support for top languages. </p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-scale-48"></use>
+         </svg> <h4 class="text-dark">Scale</h4> <p>Heroku scales in an instant, both vertically and horizontally. You can elegantly run everything from tiny hobby projects to enterprise-grade e-commerce handling Black Friday surges.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-addon-48"></use>
+         </svg> <h4 class="text-dark">Add-ons</h4> <p>Extend, enhance, and manage your applications with pre-integrated services like New Relic, MongoDB, SendGrid, Searchify, Fastly, Papertrail, ClearDB MySQL, Treasure Data, and more.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-dataclips-48"></use>
+         </svg> <h4 class="text-dark">Data Clips</h4> <p>Data Clips make it easy to keep everyone in the loop with up-to-the-second data insights from your project by sharing query results via a simple and secure URL.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-rollback-48"></use>
+         </svg> <h4 class="text-dark">Code and data rollback</h4> <p>Work fearlessly — Heroku’s build system and Postgres service let you roll back your code or your database to a previous state in an instant.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-metrics-48"></use>
+         </svg> <h4 class="text-dark">App metrics</h4> <p>Always know what’s going on with your apps thanks to built-in monitoring of throughput, response times, memory, CPU load, and errors.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-sync-48"></use>
+         </svg> <h4 class="text-dark">Continuous delivery</h4> <p><a href="/flow">Heroku Flow</a> uses Heroku Pipelines, Review Apps and GitHub Integration to make building, iterating, staging, and shipping apps easy, visual, and efficient.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-github-48"></use>
+         </svg> <h4 class="text-dark">GitHub Integration</h4> <p>Our seamless GitHub integration means every pull request spins up a disposable Review App for testing, and any repo can be set up to auto-deploy with every GitHub push to a branch of your choosing.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-buildpack-48"></use>
+         </svg> <h4 class="text-dark">Extensibility</h4> <p>Customize your stack with a Heroku innovation: Buildpacks. Build your own, or choose one from the hundreds built by the community to run Gradle, Meteor, NGINX — even Haskell.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-purple">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-app-48"></use>
+         </svg> <h4 class="text-dark">Smart containers</h4> <p>Your apps run in <a href="/dynos">smart containers called dynos</a>, where the system and language stacks are continually monitored, patched, and upgraded by our team.</p> </li> 
+       </ul> 
+       <div class="wrapper text-center"> 
+        <a class="btn btn-primary btn-lg btn-uppercase" href="/platform">Learn about the Heroku Platform</a> 
+       </div> 
+      </div> 
+      <div class="features-enterprise"> 
+       <div class="text-center"> 
+        <img alt="Heroku Enterprise" class="logo" src="https://www0.assets.heroku.com/assets/enterprise/logo-blue-cde578d6a1931a7ba371bc0c5397d13ddf02a6059fc943b8ca86b7b53522097a.svg"> 
+        <h2>Heroku Enterprise</h2> 
+        <h3>The Heroku experience developers love,<br> with the enterprise features large companies need.</h3> 
+       </div> 
+       <ul class="feature-set list-unstyled row"> 
+        <li class="has-icon"> 
+         <svg class="icon fill-blue">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-spaces-48"></use>
+         </svg> <h4 class="text-dark">Private Spaces</h4> <p>Network isolated, dedicated runtime environments for enhanced privacy, power, and performance.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-blue">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-control-48"></use>
+         </svg> <h4 class="text-dark">Fine-grained access controls</h4> <p>Seamlessly integrated permissions sets to give managers control, and ensures users have the access they need.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-blue">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-user-48"></use>
+         </svg> <h4 class="text-dark">SSO for Heroku</h4> <p>Use your Identity Provider of choice, like Salesforce Identity, Okta, PingOne, Microsoft Active Directory, or PingFederate to manage developer access and authorization.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-blue">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-team-48"></use>
+         </svg> <h4 class="text-dark">Team and resource oversight</h4> <p>Manage your teams, resources, and performance from a single dashboard across applications in different stages of development. </p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-blue">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-connect-48"></use>
+         </svg> <h4 class="text-dark">Heroku Connect</h4> <p>Seamlessly sync your Heroku data into your Salesforce systems of record, for a single point of view of your customers.</p> </li> 
+        <li class="has-icon"> 
+         <svg class="icon fill-blue">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#marketing-support-48"></use>
+         </svg> <h4 class="text-dark">Enterprise-grade support</h4> <p>Highly responsive SLAs, plus expert help with scaling, application architecture design, white-glove onboarding, and more.</p> </li> 
+       </ul> 
+       <div class="wrapper text-center"> 
+        <a class="btn btn-info btn-lg btn-uppercase" href="/enterprise">Learn about Enterprise</a> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="customers separated"> 
+     <div class="logo-background"> 
+      <div class="wrapper"> 
+       <h2>See how <strong>AltSchool</strong> tests new ideas faster using Heroku CLI, Heroku Dashboard, and other platform&nbsp;tools.</h2> 
+       <div class="video-wrapper video-wrapper-light"> 
+        <div class="videoplayer">
+         <video id="heroku_customer_altschool" playsinline="true" controlslist="nodownload" poster="https://www2.assets.heroku.com/videos/heroku_customer_altschool/cover.jpg">
+          <source src="https://www2.assets.heroku.com/videos/heroku_customer_altschool/heroku_customer_altschool.webm" type="video/webm">
+          <source src="https://www1.assets.heroku.com/videos/heroku_customer_altschool/heroku_customer_altschool.ogg" type="video/ogg">
+          <source src="https://www3.assets.heroku.com/videos/heroku_customer_altschool/heroku_customer_altschool.mp4" type="video/mp4">
+          <p>Your browser does not support HTML5 video.</p>
+         </video>
+         <div class="controls">
+          <button name="button" type="submit" class="action action-play" accesskey="P">Play</button>
+          <div class="progress-bar">
+           <span class="progress-bar-current"></span>
+          </div>
+          <div class="progress-time">
+           <span class="progress-time-current">00:00</span>
+           <span class="progress-time-separator"> • </span>
+           <span class="progress-time-total">00:00</span>
+          </div>
+          <button name="button" type="submit" class="action action-mute">Mute</button>
+          <button name="button" type="submit" class="action action-fullscreen">Full Screen</button>
+         </div>
+         <div class="start"></div>
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="testimonials" class="full-width-quote section-gray-dark"> 
+      <div class="unslider">
+       <div class="slideshow quote-slideshow unslider-horizontal" aria-live="polite" style="position: relative; overflow: hidden; height: initial;"> 
+        <ul class="unslider-wrap unslider-carousel" style="width: 400%; left: -100%;"> 
+         <li class="" style="width: 25%;" aria-hidden="true"> 
+          <div class="wrapper wrapper-sm"> 
+           <blockquote class="pullquote-sm"> 
+            <p>We needed a platform that would allow for rapid development in our language of choice, simplified operations, and provided infinite scalability. Heroku delivered in spades.</p> 
+            <cite> <span class="quote-author">Gopal Patel</span> <span class="quote-author-meta">CTO, GetFeedback</span> </cite> 
+           </blockquote> 
+          </div> </li> 
+         <li style="width: 25%;" class="unslider-active" aria-hidden="false"> 
+          <div class="wrapper wrapper-sm"> 
+           <blockquote class="pullquote-sm"> 
+            <p>With Heroku driving the back-end, our dashboard can pivot numbers across 14 million distributors and aggregate in mere seconds.</p> 
+            <cite> <span class="quote-author">Seth Winters</span> <span class="quote-author-meta">Web Development Manager at Forever Living</span> </cite> 
+           </blockquote> 
+          </div> </li> 
+         <li style="width: 25%;"> 
+          <div class="wrapper wrapper-sm"> 
+           <blockquote class="pullquote-sm"> 
+            <p>With the help of Heroku, we’re able to provide our food retailers with a valuable technology platform that helps them stay competitive, improve and grow their existing business, delight existing customers, and attract new ones.</p> 
+            <cite> <span class="quote-author">Kevin McKenzie</span> <span class="quote-author-meta">Global Chief Digital Officer, Westfield</span> </cite> 
+           </blockquote> 
+          </div> </li> 
+         <li style="width: 25%;"> 
+          <div class="wrapper wrapper-sm"> 
+           <blockquote class="pullquote-sm"> 
+            <p>We’ve been developing on Heroku for three years without the need for dedicated DevOps, which to me is the real testament to the power of the Heroku platform.</p> 
+            <cite> <span class="quote-author">Jake Rosenberg</span> <span class="quote-author-meta">CTO, LendUp</span> </cite> 
+           </blockquote> 
+          </div> </li> 
+        </ul> 
+       </div>
+       <nav class="unslider-nav">
+        <ol aria-controls="initial">
+         <li data-slide="0" class="">1</li>
+         <li data-slide="1" class="unslider-active">2</li>
+         <li data-slide="2">3</li>
+         <li data-slide="3">4</li>
+        </ol>
+       </nav>
+      </div> 
+      <div class="wrapper text-center"> 
+       <a class="btn btn-primary btn-lg btn-uppercase" href="/customers">View more customers</a> 
+      </div> 
+      <div class="wrapper text-center"> 
+       <a href="/agencies">Learn how agencies use Heroku &gt;&gt;</a> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="news section-gray-light"> 
+     <div class="wrapper"> 
+      <div class="list-news list-links"> 
+       <h5 class="text-dark caps">Tweets from <a target="_blank" href="https://twitter.com/heroku">@heroku</a></h5> 
+       <ul> 
+        <li class="news-single news-twitter"> 
+         <div class="content"> 
+          <h5 class="text-dark">A comprehensive recap of 2018 at Heroku: Advancing the <a class="tweet-url hashtag" href="https://twitter.com/#!/search?q=%23developer" rel="nofollow" title="#developer">#developer</a> experience, <a class="tweet-url hashtag" href="https://twitter.com/#!/search?q=%23trust" rel="nofollow" title="#trust">#trust</a> &amp; compliance, and <a class="tweet-url hashtag" href="https://twitter.com/#!/search?q=%23data" rel="nofollow" title="#data">#data</a>:… <a href="https://t.co/zwuGSYNAmN" rel="nofollow">https://t.co/zwuGSYNAmN</a></h5> 
+          <p><small><a data-timestamp="2019-01-09T16:27:23Z" href="https://twitter.com/heroku/status/1083037530373668864">09:57 PM - 09 Jan 2019</a></small></p> 
+         </div> 
+         <div class="meta"> 
+          <a class="btn btn-default btn-sm" href="https://twitter.com/heroku/status/1083037530373668864">View tweet</a> 
+         </div> </li> 
+        <li class="news-single news-twitter"> 
+         <div class="content"> 
+          <h5 class="text-dark">Did you already open all your presents? 🎁 Good news! You've got one more: Ruby 2.6 was released today and it inclu… <a href="https://t.co/FWtX0oJMrj" rel="nofollow">https://t.co/FWtX0oJMrj</a></h5> 
+          <p><small><a data-timestamp="2018-12-25T18:03:43Z" href="https://twitter.com/heroku/status/1077625952585351168">11:33 PM - 25 Dec 2018</a></small></p> 
+         </div> 
+         <div class="meta"> 
+          <a class="btn btn-default btn-sm" href="https://twitter.com/heroku/status/1077625952585351168">View tweet</a> 
+         </div> </li> 
+        <li class="news-single news-twitter"> 
+         <div class="content"> 
+          <h5 class="text-dark">Can you join the Salesforce Lightning Platform team in Santa Ana on 1/10? Learn why building <a class="tweet-url hashtag" href="https://twitter.com/#!/search?q=%23apps" rel="nofollow" title="#apps">#apps</a> is everyone's bu… <a href="https://t.co/sjjpWo1ErH" rel="nofollow">https://t.co/sjjpWo1ErH</a></h5> 
+          <p><small><a data-timestamp="2018-12-11T18:21:27Z" href="https://twitter.com/heroku/status/1072556988758937607">11:51 PM - 11 Dec 2018</a></small></p> 
+         </div> 
+         <div class="meta"> 
+          <a class="btn btn-default btn-sm" href="https://twitter.com/heroku/status/1072556988758937607">View tweet</a> 
+         </div> </li> 
+       </ul> 
+      </div> 
+      <div class="list-news list-events"> 
+       <h5 class="text-dark caps">Upcoming <a href="/events">Events</a></h5> 
+       <ul> 
+        <li class="news-single news-event"> 
+         <div class="date"> 
+          <time datetime="2019-02-09"> <span class="month detail-month">Feb</span> <span class="day detail-day">9–10</span> </time> 
+         </div> 
+         <div class="content"> 
+          <h5><a target="_blank" href="https://www.heroku.com/events/2019/pytennessee-2019">PyTennessee</a></h5> 
+          <p><strong>Nashville, TN</strong></p> 
+          <p>Casey Faist from Heroku is presenting at PyTennessee in Nashville.</p> 
+         </div> </li> 
+        <li class="news-single news-event"> 
+         <div class="date"> 
+          <time datetime="2019-02-23"> <span class="month detail-month">Feb</span> <span class="day detail-day">23–24</span> </time> 
+         </div> 
+         <div class="content"> 
+          <h5><a target="_blank" href="https://www.heroku.com/events/2019/pycascades-2019">PyCascades</a></h5> 
+          <p><strong>Seattle, WA</strong></p> 
+          <p>Heroku is a proud sponsor of PyCascades 2019.</p> 
+         </div> </li> 
+        <li class="news-single news-event"> 
+         <div class="date"> 
+          <time datetime="2019-03-06"> <span class="month detail-month">Mar</span> <span class="day detail-day">6–8</span> </time> 
+         </div> 
+         <div class="content"> 
+          <h5><a target="_blank" href="https://www.heroku.com/events/2019/devnexus-2019">Devnexus</a></h5> 
+          <p><strong>Atlanta, GA</strong></p> 
+          <p>Heroku is a gold-level sponsor at Devnexus 2019.</p> 
+         </div> </li> 
+       </ul> 
+      </div> 
+     </div> 
+    </section> 
+    <section class="sales text-center"> 
+     <div class="wrapper"> 
+      <hr> 
+      <div class="mod-signup"> 
+       <a class="btn btn-primary btn-lg btn-uppercase" data-trackable="{&quot;category&quot;:&quot;Sign Up Links&quot;,&quot;action&quot;:&quot;Clicked&quot;,&quot;label&quot;:&quot;www-home-bottom&quot;}" href="https://signup.heroku.com">Sign up for free</a> 
+       <p class="intro pad-top">Have a question? <a href="/contact-sales">Schedule a call with our sales team.</a></p> 
+      </div> 
+     </div> 
+    </section> 
+   </div> 
+  </div> 
+  <footer id="heroku-footer"> 
+   <div class="wrapper"> 
+    <div class="col heroku-footer-links"> 
+     <nav class="col"> 
+      <h4>Products</h4> 
       <ul> 
-       <li> <strong>Timestamp</strong> - The date and time recorded at the time the log line was produced by the dyno or component. The timestamp is in the format specified by <a href="https://tools.ietf.org/html/rfc5424#section-6.2.3">RFC5424</a>, and includes microsecond precision.</li> 
-       <li> <strong>Source</strong> - All of your app’s dynos (web dynos, background workers, cron) have the source, <code>app</code>. All of Heroku’s system components (HTTP router, dyno manager) have the source, <code>heroku</code>.</li> 
-       <li> <strong>Dyno</strong> - The name of the dyno or component that wrote the log line. For example, worker #3 appears as <code>worker.3</code>, and the Heroku HTTP router appears as <code>router</code>.</li> 
-       <li> <strong>Message</strong> - The content of the log line. Lines generated by dynos that exceed 10000 bytes are split into 10000 byte chunks without extra trailing newlines. Each chunk is submitted as a separate log line.</li> 
+       <li><a href="https://www.heroku.com/platform">Heroku Platform</a></li> 
+       <li><a href="https://www.heroku.com/postgres">Heroku Postgres</a></li> 
+       <li><a href="https://www.heroku.com/redis">Heroku Redis</a></li> 
+       <li><a href="https://www.heroku.com/kafka">Kafka on Heroku</a></li> 
+       <li><a href="https://www.heroku.com/enterprise">Heroku Enterprise</a></li> 
+       <li><a href="https://www.heroku.com/private-spaces">Heroku Private Spaces</a></li> 
+       <li><a href="https://www.heroku.com/connect">Heroku Connect</a></li> 
+       <li><a href="https://www.heroku.com/shield">Heroku Shield</a></li> 
+       <li><a href="https://www.heroku.com/teams">Heroku Teams</a></li> 
+       <li><a href="https://elements.heroku.com/">Elements Marketplace</a></li> 
+       <li><a href="https://www.heroku.com/pricing">Pricing</a></li> 
       </ul> 
-      <h3 id="view-logs"><a href="https://devcenter.heroku.com/articles/logging#view-logs">View logs</a></h3> 
-      <p>To fetch your app’s most recent logs, use the <code>heroku logs</code> command:</p> 
-      <pre class=" language-term"><code class=" language-term"><span class="token input"><span class="token prompt">$ </span>heroku logs</span>
-2010-09-16T15:13:46.677020+00:00 app[web.1]: Processing PostController#list (for 208.39.138.12 at 2010-09-16 15:13:46) [GET]
-2010-09-16T15:13:46.677023+00:00 app[web.1]: Rendering template within layouts/application
-2010-09-16T15:13:46.677902+00:00 app[web.1]: Rendering post/list
-2010-09-16T15:13:46.678990+00:00 app[web.1]: Rendered includes/_header (0.1ms)
-2010-09-16T15:13:46.698234+00:00 app[web.1]: Completed in 74ms (View: 31, DB: 40) | 200 OK [http://myapp.heroku.com/]
-2010-09-16T15:13:46.723498+00:00 heroku[router]: at=info method=GET path="/posts" host=myapp.herokuapp.com" fwd="204.204.204.204" dyno=web.1 connect=1ms service=18ms status=200 bytes=975
-2010-09-16T15:13:47.893472+00:00 app[worker.1]: 2 jobs processed at 16.6761 j/s, 0 failed ...
-</code></pre> 
-      <p>In this example, the output includes log lines from one of the app’s web dynos, the Heroku HTTP router, and one of the app’s workers.</p> 
-      <p>The <code>logs</code> command retrieves 100 log lines by default. You can specify the number of log lines to retrieve (up to a maximum of 1,500 lines) by using the <code>--num</code> (or <code>-n</code>) option.</p> 
-      <pre class=" language-term"><code class=" language-term"><span class="token input"><span class="token prompt">$ </span>heroku logs -n 200</span>
-</code></pre> 
-      <h3 id="real-time-tail"><a href="https://devcenter.heroku.com/articles/logging#real-time-tail">Real-time tail</a></h3> 
-      <p>Similar to <code>tail -f</code>, real-time tail displays recent logs and leaves the session open for real-time logs to stream in. By viewing a live stream of logs from your app, you can gain insight into the behavior of your live application and debug current problems.</p> 
-      <p>You can tail your logs using <code>--tail</code> (or <code>-t</code>).</p> 
-      <pre class=" language-term"><code class=" language-term"><span class="token input"><span class="token prompt">$ </span>heroku logs --tail</span>
-</code></pre> 
-      <p>When you are done, press Ctrl+C to return to the prompt.</p> 
-      <p>A real-time tail session is automatically terminated after one hour of inactivity.</p> 
-      <h3 id="filtering"><a href="https://devcenter.heroku.com/articles/logging#filtering">Filtering</a></h3> 
-      <p>If you only want to fetch logs with a certain source, a certain dyno, or both, you can use the <code>--source</code> (or <code>-s</code>) and <code>--dyno</code> (or <code>-d</code>) filtering arguments:</p> 
-      <pre class=" language-term"><code class=" language-term"><span class="token input"><span class="token prompt">$ </span>heroku logs --dyno router</span>
-2012-02-07T09:43:06.123456+00:00 heroku[router]: at=info method=GET path="/stylesheets/dev-center/library.css" host=devcenter.heroku.com fwd="204.204.204.204" dyno=web.5 connect=1ms service=18ms status=200 bytes=13
-2012-02-07T09:43:06.123456+00:00 heroku[router]: at=info method=GET path="/articles/bundler" host=devcenter.heroku.com fwd="204.204.204.204" dyno=web.6 connect=1ms service=18ms status=200 bytes=20375
-
-<span class="token input"><span class="token prompt">$ </span>heroku logs --source app</span>
-2012-02-07T09:45:47.123456+00:00 app[web.1]: Rendered shared/_search.html.erb (1.0ms)
-2012-02-07T09:45:47.123456+00:00 app[web.1]: Completed 200 OK in 83ms (Views: 48.7ms | ActiveRecord: 32.2ms)
-2012-02-07T09:45:47.123456+00:00 app[worker.1]: [Worker(host:465cf64e-61c8-46d3-b480-362bfd4ecff9 pid:1)] 1 jobs processed at 23.0330 j/s, 0 failed ...
-2012-02-07T09:46:01.123456+00:00 app[web.6]: Started GET "/articles/buildpacks" for 4.1.81.209 at 2012-02-07 09:46:01 +0000
-
-<span class="token input"><span class="token prompt">$ </span>heroku logs --source app --dyno worker</span>
-2012-02-07T09:47:59.123456+00:00 app[worker.1]: [Worker(host:260cf64e-61c8-46d3-b480-362bfd4ecff9 pid:1)] Article#record_view_without_delay completed after 0.0221
-2012-02-07T09:47:59.123456+00:00 app[worker.1]: [Worker(host:260cf64e-61c8-46d3-b480-362bfd4ecff9 pid:1)] 5 jobs processed at 31.6842 j/s, 0 failed ...
-</code></pre> 
-      <p>When filtering by dyno, either the base name (e.g., <code>--dyno web</code>) or the full name (e.g., <code>--dyno web.1</code>) can be used.</p> 
-      <p>You can also combine the filtering switches with <code>--tail</code> to get a real-time stream of filtered output.</p> 
-      <pre class=" language-term"><code class=" language-term"><span class="token input"><span class="token prompt">$ </span>heroku logs --source app --tail</span>
-</code></pre> 
-      <h3 id="log-message-ordering"><a href="https://devcenter.heroku.com/articles/logging#log-message-ordering">Log message ordering</a></h3> 
-      <p>When you retrieve logs, you might notice that they aren’t always in exact chronological order, especially when multiple components are involved. Logs originate from many sources (router nodes, dynos, etc.) and are assembled into a single log stream by Logplex. Logplex itself uses a distributed architecture to ensure high availability, meaning that log messages might be collected across multiple Logplex nodes and therefore be delivered out of order.</p>
-      <div class="article-footer panel">
-       <div class="nocontent keep-reading" id="keep-reading">
-        <h3><span class="icon-book-open"></span><a href="#keep-reading">Keep reading</a></h3>
-        <ul class="list-icons">
-         <li><span class="icon-files"></span><a href="/categories/logging">Logging</a></li>
-         <li><span class="icon-file"></span><a href="/articles/logplex">Logplex</a></li>
-         <li><span class="icon-file"></span><a href="/articles/log-drains">Log Drains</a></li>
-        </ul>
-       </div>
-       <div class="article-feedback" id="feedback">
-        <h3><a href="#feedback"><span class="icon-discussion"></span>Feedback</a></h3>
-        <p><a href="/login?origin=%2Farticles%2Flogging&amp;utm_campaign=login&amp;utm_medium=feedback&amp;utm_source=web">Log in to submit feedback.</a></p>
-       </div>
-      </div>
-     </article>
-    </div>
-    <div class="pagination">
-     <a rel="prev" href="/articles/log-drains">Log Drains</a>
-     <a rel="next" href="/articles/logplex">Logplex</a>
-    </div>
-   </div>
-   <footer aria-label="Global Dev Center footer" id="heroku-footer">
-    <div class="wrapper">
-     <div class="col heroku-footer-links">
-      <nav aria-label="Global links for Heroku information and support" class="col">
-       <h4>Information &amp; Support</h4>
-       <ul>
-        <li><a href="/start">Getting Started</a></li>
-        <li><a href="/categories/reference">Documentation</a></li>
-        <li><a href="/changelog">Changelog</a></li>
-        <li><a href="https://www.heroku.com/compliance">Compliance Center</a></li>
-        <li><a href="https://blog.heroku.com/">Blog</a></li>
-        <li><a href="https://www.heroku.com/podcasts">Podcasts</a></li>
-        <li><a href="/articles/support-channels">Support Channels</a></li>
-        <li><a href="https://status.heroku.com/">Status</a></li>
-       </ul>
-      </nav>
-      <nav aria-label="Links to programming-language-specific Heroku documentation" class="col">
-       <h4>Language Reference</h4>
-       <ul>
-        <li><a aria-label="All Node.js documentation" href="/categories/nodejs-support">Node.js</a></li>
-        <li><a aria-label="All Ruby documentation" href="/categories/ruby-support">Ruby</a></li>
-        <li><a aria-label="All Java documentation" href="/categories/java-support">Java</a></li>
-        <li><a aria-label="All PHP documentation" href="/categories/php-support">PHP</a></li>
-        <li><a aria-label="All Python documentation" href="/categories/python-support">Python</a></li>
-        <li><a aria-label="All Go documentation" href="/categories/go-support">Go</a></li>
-        <li><a aria-label="All Scala documentation" href="/categories/scala-support">Scala</a></li>
-        <li><a aria-label="All Clojure documentation" href="/categories/clojure-support">Clojure</a></li>
-       </ul>
-      </nav>
-      <nav aria-label="Links to other Heroku web properties" class="col">
-       <h4>Other Resources</h4>
-       <ul>
-        <li><a href="https://www.heroku.com/careers">Careers</a></li>
-        <li><a href="https://elements.heroku.com/">Elements</a></li>
-        <li><a href="https://www.heroku.com/products">Products</a></li>
-        <li><a href="https://www.heroku.com/pricing">Pricing</a></li>
-       </ul>
-      </nav>
-     </div>
-     <div class="col heroku-footer-social">
-      <h3><span class="heroku-footer-icon-newsletter"></span>Subscribe to our monthly newsletter</h3>
-      <form accept-charset="UTF-8" action="https://www.heroku.com/newsletter_signups" id="bookends-newsletter" method="post">
-       <input name="utf8" type="hidden" value="✓">
-       <input aria-hidden="true" id="bookends-website" name="website" placeholder="do not fill this in" tabindex="-1" type="text">
-       <input aria-label="Newsletter signup email address" id="newsletter_signup_email" name="newsletter_signup[email]" placeholder="Your email address" required type="email">
-       <input id="newsletter-submit" name="commit" type="submit" value="Go">
-       <p class="hide" id="bookends-newsletter-result"></p>
-      </form>
-      <ul class="social-list">
-       <li class="has-dropdown"><a class="heroku-footer-icon-rss" href="http://feeds.feedburner.com/herokudevcenterarticles" target="_blank"> RSS</a>
-        <div class="dropdown">
-         <ul>
-          <li><a aria-label="Dev Center article RSS feed" href="http://feeds.feedburner.com/herokudevcenterarticles" target="_blank"><span class="heroku-footer-icon-rss"></span>Dev Center Articles</a></li>
-          <li><a aria-label="Changelog RSS feed" href="http://feeds.feedburner.com/herokuchangelog" target="_blank"><span class="heroku-footer-icon-rss"></span>Dev Center Changelog</a></li>
-          <li><a aria-label="All blog posts RSS feed" href="https://blog.heroku.com/feed" target="_blank"><span class="heroku-footer-icon-rss"></span>Heroku Blog</a></li>
-          <li><a aria-label="News blog posts RSS feed" href="https://blog.heroku.com/news/feed" target="_blank"><span class="heroku-footer-icon-rss"></span>Heroku News Blog</a></li>
-          <li><a aria-label="Engineering blog posts RSS feed" href="https://blog.heroku.com/engineering/feed" target="_blank"><span class="heroku-footer-icon-rss"></span>Heroku Engineering Blog</a></li>
-         </ul>
-        </div></li>
-       <li class="has-dropdown"><a class="heroku-footer-icon-twitter" href="https://twitter.com/herokudevcenter" target="_blank"> Twitter</a>
-        <div class="dropdown">
-         <ul>
-          <li><a aria-label="Heroku Dev Center Twitter account" href="https://twitter.com/herokudevcenter" target="_blank"><span class="heroku-footer-icon-twitter"></span>Dev Center Articles</a></li>
-          <li><a aria-label="Heroku Changelog Twitter account" href="https://twitter.com/herokuchangelog" target="_blank"><span class="heroku-footer-icon-twitter"></span>Dev Center Changelog</a></li>
-          <li><a aria-label="Heroku primary Twitter account" href="https://twitter.com/heroku" target="_blank"><span class="heroku-footer-icon-twitter"></span>Heroku</a></li>
-          <li><a aria-label="Heroku status Twitter account" href="https://twitter.com/herokustatus" target="_blank"><span class="heroku-footer-icon-twitter"></span>Heroku Status</a></li>
-         </ul>
-        </div></li>
-       <li><a class="heroku-footer-icon-facebook" href="https://facebook.com/heroku" target="_blank"> Facebook</a></li>
-       <li><a class="heroku-footer-icon-instagram" href="https://instagram.com/heroku" target="_blank"> Instagram</a></li>
-       <li><a class="heroku-footer-icon-github" href="https://github.com/heroku" target="_blank"> Github</a></li>
-       <li><a class="heroku-footer-icon-linkedin" href="https://www.linkedin.com/company/heroku" target="_blank"> LinkedIn</a></li>
-      </ul>
-     </div>
-    </div>
-    <div class="tertiary">
-     <div class="wrapper">
-      <div class="col">
-       <a class="sfdc-logo" href="https://www.salesforce.com" title="salesforce.com">Heroku is a<span></span>company</a>
-      </div>
-      <div class="col">
-       <p class="copyright">&nbsp;© 2019 Salesforce.com</p>
-       <ul>
-        <li><a href="https://heroku.com/home">heroku.com</a></li>
-        <li><a href="https://heroku.com/policy/salesforce-heroku-msa">Terms of Service</a></li>
-        <li><a href="https://www.salesforce.com/company/privacy">Privacy</a></li>
-        <li><a href="https://www.salesforce.com/company/privacy/full_privacy.jsp#nav_info">Cookies</a></li>
-       </ul>
-      </div>
-     </div>
-    </div>
-   </footer>
-  </div>
+     </nav> 
+     <nav class="col"> 
+      <h4>Resources</h4> 
+      <ul> 
+       <li><a href="https://devcenter.heroku.com/">Documentation</a></li> 
+       <li><a href="https://www.heroku.com/compliance">Compliance Center</a></li> 
+       <li><a href="https://blog.heroku.com/">Blog</a></li> 
+       <li><a href="https://www.heroku.com/podcasts">Podcasts</a></li> 
+       <li><a href="https://devcenter.heroku.com/start">Get Started</a></li> 
+      </ul> 
+     </nav> 
+     <nav class="col"> 
+      <h4>About</h4> 
+      <ul> 
+       <li><a href="https://www.heroku.com/about">About Us</a></li> 
+       <li><a href="https://www.heroku.com/what">What is Heroku</a></li> 
+       <li><a href="https://www.heroku.com/customers">Our Customers</a></li> 
+       <li><a href="https://www.heroku.com/careers">Careers</a></li> 
+       <li><a href="https://www.heroku.com/partnering">Partners</a></li> 
+       <li><a href="https://www.heroku.com/elements">Elements Marketplace</a></li> 
+      </ul> 
+     </nav> 
+     <nav class="col"> 
+      <h4>Support</h4> 
+      <ul> 
+       <li><a href="https://help.heroku.com/">Help Center</a></li> 
+       <li><a href="https://status.heroku.com/">Status</a></li> 
+       <li><a href="https://www.heroku.com/critical">Premium Support</a></li> 
+       <li><a href="https://www.heroku.com/contact">Contact Us</a></li> 
+      </ul> 
+     </nav> 
+    </div> 
+    <div class="col heroku-footer-social"> 
+     <h3><span class="heroku-footer-icon-newsletter"></span>Subscribe to our monthly newsletter</h3> 
+     <form id="bookends-newsletter" accept-charset="UTF-8" action="https://www.heroku.com/newsletter_signups" method="post"> 
+      <input name="utf8" type="hidden" value="✓"> 
+      <input type="text" name="website" id="bookends-website" placeholder="do not fill this in" tabindex="-1"> 
+      <input type="email" name="newsletter_signup[email]" id="newsletter_signup_email" placeholder="Your email address" required> 
+      <input type="submit" name="commit" value="Go" class="disabled"> 
+      <p id="bookends-newsletter-result" class="hide"></p> 
+     </form> 
+     <ul class="social-list"> 
+      <li class="has-dropdown"> <a class="heroku-footer-icon-rss" href="https://blog.heroku.com/feed" target="_blank"> RSS</a> 
+       <div class="dropdown"> 
+        <ul> 
+         <li><a href="https://blog.heroku.com/feed" target="_blank"><span class="heroku-footer-icon-rss"></span>Heroku Blog</a></li> 
+         <li><a href="https://blog.heroku.com/news/feed" target="_blank"><span class="heroku-footer-icon-rss"></span>Heroku News Blog</a></li> 
+         <li><a href="https://blog.heroku.com/engineering/feed" target="_blank"><span class="heroku-footer-icon-rss"></span>Heroku Engineering Blog</a></li> 
+         <li><a href="http://feeds.feedburner.com/herokudevcenterarticles" target="_blank"><span class="heroku-footer-icon-rss"></span>Dev Center Articles</a></li> 
+         <li><a href="http://feeds.feedburner.com/herokuchangelog" target="_blank"><span class="heroku-footer-icon-rss"></span>Dev Center Changelog</a></li> 
+         <li><a href="http://feeds.feedburner.com/herokustatus" target="_blank"><span class="heroku-footer-icon-rss"></span>Heroku Status</a></li> 
+        </ul> 
+       </div> </li> 
+      <li class="has-dropdown"> <a class="heroku-footer-icon-twitter" href="https://twitter.com/heroku" target="_blank"> Twitter</a> 
+       <div class="dropdown"> 
+        <ul> 
+         <li><a href="https://twitter.com/heroku" target="_blank"><span class="heroku-footer-icon-twitter"></span>Heroku</a></li> 
+         <li><a href="https://twitter.com/herokudevcenter" target="_blank"><span class="heroku-footer-icon-twitter"></span>Dev Center Articles</a></li> 
+         <li><a href="https://twitter.com/herokuchangelog" target="_blank"><span class="heroku-footer-icon-twitter"></span>Dev Center Changelog</a></li> 
+         <li><a href="https://twitter.com/herokustatus" target="_blank"><span class="heroku-footer-icon-twitter"></span>Heroku Status</a></li> 
+        </ul> 
+       </div> </li> 
+      <li><a class="heroku-footer-icon-facebook" href="https://facebook.com/heroku" target="_blank" title="Heroku's Facebook">Facebook</a></li> 
+      <li><a class="heroku-footer-icon-instagram" href="https://instagram.com/heroku" target="_blank" title="Heroku's Instagram">Instagram</a></li> 
+      <li><a class="heroku-footer-icon-github" href="https://github.com/heroku" target="_blank" title="Heroku's GitHub">GitHub</a></li> 
+      <li><a class="heroku-footer-icon-linkedin" href="https://www.linkedin.com/company/heroku" target="_blank" title="Heroku's LinkedIn">LinkedIn</a></li> 
+     </ul> 
+     <div class="language-select"> 
+      <a href="https://jp.heroku.com/home" onclick="dataLayer.push({'event': 'trackEvent', 'eventCat': 'Internal Links', 'eventAction': 'Change Language', 'eventLabel': 'Switch to Japanese Site', 'eventValue': 0, 'eventInteraction': 0})">日本語</a> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="tertiary"> 
+    <div class="wrapper"> 
+     <div class="col"> 
+      <a href="https://www.salesforce.com" title="salesforce.com" class="sfdc-logo">Heroku is a <span></span> company</a> 
+     </div> 
+     <div class="col"> 
+      <ul> 
+       <li><a href="https://www.heroku.com/home">heroku.com</a></li> 
+       <li><a href="https://www.heroku.com/policy/salesforce-heroku-msa">Terms of Service</a></li> 
+       <li><a href="https://www.salesforce.com/company/privacy/">Privacy</a></li> 
+       <li><a href="https://www.salesforce.com/company/privacy/full_privacy.jsp#nav_info">Cookies</a></li> 
+       <li class="copyright"> © 2019 Salesforce.com </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
   <!--?xml version="1.0" encoding="UTF-8" standalone="no"?--> 
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0;visibility:hidden"> 
    <defs> 
@@ -878,30 +1045,23 @@ System<span class="token punctuation">.</span>out<span class="token punctuation"
     </symbol> 
    </defs> 
   </svg> 
-  <!-- Google Tag Manager --> 
-  <noscript>
-   &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-JD26" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
-  </noscript> 
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-JD26');</script> 
-  <!-- End Google Tag Manager --> 
-  <!--[if lt IE 9]>
- 
-<![endif]--> 
-  <script>
-  
-</script> 
   <script type="text/javascript" id="">(function(){var a=function(a){a=new RegExp("[; ]"+a+"\x3d([^\\s;]*)");if(a=(" "+document.cookie).match(a))return unescape(a[1])};if(!a("jbfp")){var b=Math.random().toString(36).substring(2,15)+Math.random().toString(36).substring(2,15);document.cookie="jbfp\x3d"+(new Date).getTime()+"-"+b+";domain\x3dheroku.com;path\x3d/;max-age\x3d31536000"}b=document.referrer;var c=a("jbfp"),d=a("heroku_session");a=document.createElement("img");c="https://jambox.heroku.com/e?url\x3d"+escape(document.location.href)+
 "\x26fp\x3d"+c+"\x26li\x3d"+d;b&&(c+="\x26ref\x3d"+escape(b));a.src=c})();</script>
+  <script type="text/javascript" id="">window.addEventListener("load",function(h){(function(c,e,g){e=c(e);var f={iframes:[],eventMarker:{},getIframeSrc:function(a){return c(a).attr("src").split("?")[0]},getIframeId:function(a){return c(a).attr("id")},removeUndefinedIframes:function(a){var b=c(a).attr("id");a=c(a).attr("src");if(-1===a.indexOf("player_id"))return!1;if(this.eventMarker[b])return!0;this.eventMarker[b]={progress25:!1,progress50:!1,progress75:!1,videoPlayed:!1,videoPaused:!1,videoResumed:!1,videoSeeking:!1,videoCompleted:!1,
+timePercentComplete:0};return!0},init:function(){var a=c('iframe[src*\x3d"player.vimeo.com/video"]');this.iframes=c.grep(a,c.proxy(this.removeUndefinedIframes,this));c.each(this.iframes,c.proxy(this.handleOnReady,this))},onMessageReceived:function(a){if(/^https?:\/\/player\.vimeo\.com/.test(a.originalEvent.origin)){a=JSON.parse(a.originalEvent.data);var b=c("#"+a.player_id)[0];switch(a.event){case "playProgress":this.onPlayProgress(a.data,b);break;case "seek":this.onSeek(b);break;case "play":this.onPlay(b);
+break;case "pause":this.onPause(b);break;case "finish":this.onFinish(b)}}},post:function(a,b,d){a=JSON.stringify({method:a,value:b});b=c(d).attr("src").split("?")[0];d.contentWindow.postMessage(a,b)},handleOnReady:function(a,b){this.post("addEventListener","play",b);this.post("addEventListener","seek",b);this.post("addEventListener","pause",b);this.post("addEventListener","finish",b);this.post("addEventListener","playProgress",b)},onFinish:function(a){var b=this.getIframeId(a);this.eventMarker[b].videoCompleted||
+(this.sendEvent(a,"Completed video"),this.eventMarker[b].videoCompleted=!0)},onSeek:function(a){var b=this.getIframeId(a);this.eventMarker[b].videoSeeking||(this.sendEvent(a,"Skipped video forward or backward"),this.eventMarker[b].videoSeeking=!0)},onPlay:function(a){var b=this.getIframeId(a);this.eventMarker[b].videoPlayed||(this.sendEvent(a,"Started video"),this.eventMarker[b].videoPlayed=!0);!this.eventMarker[b].videoResumed&&this.eventMarker[b].videoPaused&&(this.sendEvent(a,"Resumed video"),
+this.eventMarker[b].videoResumed=!0)},onPause:function(a){var b=this.getIframeId(a);99>this.eventMarker[b].timePercentComplete&&!this.eventMarker[b].videoPaused&&(this.sendEvent(a,"Paused video"),this.eventMarker[b].videoPaused=!0)},onPlayProgress:function(a,b){var d=this.getIframeId(b);this.eventMarker[d].timePercentComplete=Math.round(100*a.percent);if(24<this.eventMarker[d].timePercentComplete&&!this.eventMarker[d].progress25){var c="Played video: 25%";this.eventMarker[d].progress25=!0}49<this.eventMarker[d].timePercentComplete&&
+!this.eventMarker[d].progress50&&(c="Played video: 50%",this.eventMarker[d].progress50=!0);74<this.eventMarker[d].timePercentComplete&&!this.eventMarker[d].progress75&&(c="Played video: 75%",this.eventMarker[d].progress75=!0);c&&this.sendEvent(b,c)},sendEvent:function(a,b){var c=this.getIframeSrc(a);g.push({event:"trackEvent",eventCat:"Vimeo",eventAction:b,eventLabel:c,eventValue:void 0,eventInteraction:!1})}};f.init();e.on("message",c.proxy(f.onMessageReceived,f))})(jQuery,window,window.dataLayer)});</script> 
   <img src="//bat.bing.com/action/0?ti=5116236&amp;Ver=2" height="0" width="0" style="display:none; visibility: hidden;">
   <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=nuf3v&amp;p_id=Twitter&amp;tw_sale_amount=0&amp;tw_order_quantity=0"> 
   <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=nuf3v&amp;p_id=Twitter&amp;tw_sale_amount=0&amp;tw_order_quantity=0">
   <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=998836190199866&amp;ev=PageView&amp;noscript=1"> 
+  <noscript>
+    &lt;img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l4ajt&amp;amp;p_id=Twitter"&gt; 
+  </noscript>
   <div id="mid-container" style="position: absolute; top: -1000px; left: -1000px;">
    <canvas width="100" height="100"></canvas>
-  </div>
+  </div> 
  </body>
 </html>
